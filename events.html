@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Events | Guan Yin Citta NZ</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6e5e00",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#f0d13c",
+                        "on-primary-container": "#695900",
+                        "secondary": "#3456c1",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#7392ff",
+                        "on-secondary-container": "#00287f",
+                        "tertiary": "#33647b",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#a9d9f4",
+                        "on-tertiary-container": "#2e6077",
+                        "background": "#fcf9f8",
+                        "on-background": "#1c1b1b",
+                        "surface": "#fcf9f8",
+                        "on-surface": "#1c1b1b",
+                        "surface-variant": "#e5e2e1",
+                        "on-surface-variant": "#4c4734",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-container": "#f0eded",
+                        "surface-container-high": "#eae7e7",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#7d7762",
+                        "outline-variant": "#cfc6ae",
+                        "primary-fixed": "#ffe25e",
+                        "primary-fixed-dim": "#e4c530",
+                        "secondary-fixed": "#dce1ff",
+                        "inverse-surface": "#313030",
+                        "inverse-on-surface": "#f3f0ef",
+                        "inverse-primary": "#e4c530"
+                    },
+                    borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+                    fontFamily: { headline: ["Be Vietnam Pro"], body: ["Inter"], label: ["Inter"] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-headline {
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .editorial-shadow {
+            box-shadow: 0 24px 48px -12px rgba(28, 27, 27, 0.06);
+        }
+
+        /* Card swap animations */
+        .event-card-container {
+            transition: opacity 0.35s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .event-card-container.swapping-out {
+            opacity: 0;
+            transform: scale(0.96) translateY(12px);
+        }
+
+        .event-card-container.swapping-in {
+            opacity: 0;
+            transform: scale(0.96) translateY(-12px);
+        }
+
+        .featured-img {
+            transition: opacity 0.5s ease;
+        }
+
+        .small-card {
+            transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .small-card.swapping-out {
+            opacity: 0;
+            transform: translateX(20px) scale(0.95);
+        }
+
+        .small-card.swapping-in {
+            opacity: 0;
+            transform: translateX(-20px) scale(0.95);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .event-card-container,
+            .small-card {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface">
+
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm">
+        <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+            <a href="index.html" class="flex items-center gap-3 cursor-pointer">
+                <img src="images/guanyin-logo.png" alt="Guan Yin Citta Logo" class="h-10 w-10 object-contain" />
+                <span class="text-2xl font-bold tracking-tight text-[#6e5e00] font-headline">Guan Yin Citta NZ</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer"
+                    href="index.html">Home</a>
+                <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer"
+                    href="about.html">About Us</a>
+                <a class="font-headline font-bold tracking-tight text-[#6e5e00] border-b-2 border-[#f0d13c] pb-1 transition-all duration-300 cursor-pointer"
+                    href="events.html">Events</a>
+                <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer"
+                    href="contact.html">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="donate.html"
+                    class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-all active:scale-95 cursor-pointer">Donate</a>
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                    class="md:hidden p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-8 pb-4 space-y-3">
+            <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="index.html">Home</a>
+            <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="about.html">About Us</a>
+            <a class="block font-headline font-bold text-[#6e5e00] py-2 cursor-pointer" href="events.html">Events</a>
+            <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative h-[500px] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0" style="background-image: url('images/community-auditorium.jpg'); background-size: 130%; background-position: 80% 70%;">
+                <div class="absolute inset-0 bg-black/30"></div>
+            </div>
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight mb-4 drop-shadow-lg font-headline">
+                    Events &amp; Programs
+                </h1>
+                <p class="text-white/90 text-lg md:text-xl max-w-2xl mx-auto font-light tracking-wide italic">
+                    Join our regular Buddhism study sessions across Auckland -- all are welcome.
+                </p>
+            </div>
+        </section>
+
+        <!-- Category Filters -->
+        <section class="max-w-7xl mx-auto px-8 py-12">
+            <div class="flex flex-wrap justify-center gap-4" id="filter-bar">
+                <button data-filter="all"
+                    class="filter-btn px-8 py-3 rounded-full font-semibold shadow-sm cursor-pointer transition-all duration-300 bg-primary-container text-on-primary-container">All
+                    Events</button>
+                <button data-filter="community"
+                    class="filter-btn px-8 py-3 rounded-full font-medium cursor-pointer transition-all duration-300 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high">Community</button>
+                <button data-filter="ceremonies"
+                    class="filter-btn px-8 py-3 rounded-full font-medium cursor-pointer transition-all duration-300 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high">Ceremonies</button>
+            </div>
+        </section>
+
+        <!-- Events List -->
+        <section class="max-w-7xl mx-auto px-8 pb-24" id="events-grid">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Main Featured Event -->
+                <div class="md:col-span-8 event-card-container relative overflow-hidden rounded-xl" id="featured-card">
+                    <div class="relative h-[450px] overflow-hidden rounded-xl group">
+                        <img id="featured-img"
+                            class="featured-img w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            alt="" src="images/community-gathering.jpg" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-8 text-white">
+                            <div class="flex items-center gap-4 mb-4">
+                                <span id="featured-tag"
+                                    class="bg-primary-container text-on-primary-container px-3 py-1 rounded-md text-xs font-bold uppercase tracking-widest">Featured</span>
+                                <span id="featured-location" class="text-sm font-medium">Guan Yin Citta Practice Center,
+                                    Auckland</span>
+                            </div>
+                            <h2 id="featured-title" class="text-4xl font-bold mb-4 font-headline">Buddhism Study
+                                Sessions</h2>
+                            <p id="featured-desc" class="text-white/80 max-w-xl mb-6">To cultivate good affinities and
+                                promote the wisdom of Buddhism, we regularly hold Buddhist study classes each month in
+                                Auckland's East, West, and North Shore regions. These sessions cover Buddha's birthday
+                                celebrations, seasonal cultural insights, plain-language Buddhist teachings, and Q&A
+                                discussions.</p>
+                            <a href="contact.html"
+                                class="bg-white text-on-surface px-8 py-3 rounded-lg font-bold hover:bg-primary-container transition-colors cursor-pointer inline-block">Get
+                                in Touch</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Side Events -->
+                <div class="md:col-span-4 flex flex-col gap-4" id="side-cards">
+                    <div class="small-card bg-surface-container-lowest rounded-xl p-5 shadow-sm border-l-4 cursor-pointer"
+                        id="side-card-0">
+                        <span class="side-tag font-bold text-xs uppercase tracking-widest block mb-2"></span>
+                        <h3 class="side-title text-lg font-bold mb-1 font-headline"></h3>
+                        <p class="side-desc text-on-surface-variant text-sm mb-4"></p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="side-schedule text-sm font-semibold italic"></span>
+                            <a href="contact.html" class="text-secondary font-bold hover:underline cursor-pointer">Learn
+                                More</a>
+                        </div>
+                    </div>
+                    <div class="small-card bg-surface-container-lowest rounded-xl p-5 shadow-sm border-l-4 cursor-pointer"
+                        id="side-card-1">
+                        <span class="side-tag font-bold text-xs uppercase tracking-widest block mb-2"></span>
+                        <h3 class="side-title text-lg font-bold mb-1 font-headline"></h3>
+                        <p class="side-desc text-on-surface-variant text-sm mb-4"></p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="side-schedule text-sm font-semibold italic"></span>
+                            <a href="contact.html" class="text-secondary font-bold hover:underline cursor-pointer">Learn
+                                More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+                (function () {
+                    // Event data
+                    const events = {
+                        buddhism: {
+                            tag: 'Featured',
+                            tagColor: 'primary',
+                            title: 'Buddhism Study Sessions',
+                            desc: "Monthly Buddhist study classes across Auckland's East, West, and North Shore. Covering teachings, Q&A, and seasonal cultural insights.",
+                            location: 'Guan Yin Citta Practice Center, Auckland',
+                            schedule: 'Alternate Saturdays',
+                            image: 'images/community-gathering.jpg',
+                            borderColor: 'border-primary',
+                            tagTextColor: 'text-primary',
+                            category: 'buddhism'
+                        },
+                        community: {
+                            tag: 'Community',
+                            tagColor: 'secondary',
+                            title: 'Health & Wellness Talks',
+                            desc: 'Wellness programs blending Buddhist wisdom with holistic health guidance. Covering mental well-being, vegetarian nutrition, and mindful living.',
+                            location: 'Various Auckland Locations',
+                            schedule: 'Regular Program',
+                            image: 'images/community-event.jpg',
+                            borderColor: 'border-secondary',
+                            tagTextColor: 'text-secondary',
+                            category: 'community'
+                        },
+                        ceremonies: {
+                            tag: 'Annual Event',
+                            tagColor: 'primary',
+                            title: 'Vegetarian Carnival',
+                            desc: 'Annual community celebration featuring free vegetarian food, cultural performances, wellness activities, and family-friendly entertainment.',
+                            location: 'Auckland Community Venue',
+                            schedule: 'Annual Event',
+                            image: 'images/community-volunteering.jpg',
+                            borderColor: 'border-primary',
+                            tagTextColor: 'text-primary',
+                            category: 'ceremonies'
+                        }
+                    };
+
+                    // Default layout: which key is featured, which two are side cards
+                    const layouts = {
+                        all: { featured: 'buddhism', sides: ['ceremonies', 'community'] },
+                        community: { featured: 'community', sides: ['buddhism', 'ceremonies'] },
+                        ceremonies: { featured: 'ceremonies', sides: ['buddhism', 'community'] }
+                    };
+
+                    let currentFilter = 'all';
+                    let isAnimating = false;
+
+                    function renderCards(layout) {
+                        const feat = events[layout.featured];
+                        const s0 = events[layout.sides[0]];
+                        const s1 = events[layout.sides[1]];
+
+                        // Featured card
+                        document.getElementById('featured-img').src = feat.image;
+                        document.getElementById('featured-img').alt = feat.title;
+                        document.getElementById('featured-tag').textContent = feat.tag;
+                        document.getElementById('featured-location').textContent = feat.location;
+                        document.getElementById('featured-title').textContent = feat.title;
+                        document.getElementById('featured-desc').textContent = feat.desc;
+
+                        // Side cards
+                        [s0, s1].forEach(function (ev, i) {
+                            var card = document.getElementById('side-card-' + i);
+                            card.querySelector('.side-tag').textContent = ev.tag;
+                            card.querySelector('.side-tag').className = 'side-tag font-bold text-xs uppercase tracking-widest block mb-2 ' + ev.tagTextColor;
+                            card.querySelector('.side-title').textContent = ev.title;
+                            card.querySelector('.side-desc').textContent = ev.desc;
+                            card.querySelector('.side-schedule').textContent = ev.schedule;
+                            // border color
+                            card.className = card.className.replace(/border-(primary|secondary)/g, '');
+                            card.classList.add(ev.borderColor);
+                            // clicking a side card makes it featured
+                            card.onclick = function () {
+                                var filterKey = ev.category;
+                                setFilter(filterKey);
+                            };
+                        });
+                    }
+
+                    function animateSwap(layout, cb) {
+                        var featEl = document.getElementById('featured-card');
+                        var sideEls = document.querySelectorAll('.small-card');
+
+                        // Phase 1: fade out
+                        featEl.classList.add('swapping-out');
+                        sideEls.forEach(function (el) { el.classList.add('swapping-out'); });
+
+                        setTimeout(function () {
+                            // Phase 2: swap content
+                            renderCards(layout);
+
+                            // Remove out, add in
+                            featEl.classList.remove('swapping-out');
+                            featEl.classList.add('swapping-in');
+                            sideEls.forEach(function (el) {
+                                el.classList.remove('swapping-out');
+                                el.classList.add('swapping-in');
+                            });
+
+                            // Force reflow
+                            void featEl.offsetHeight;
+
+                            // Phase 3: fade in
+                            requestAnimationFrame(function () {
+                                featEl.classList.remove('swapping-in');
+                                sideEls.forEach(function (el) { el.classList.remove('swapping-in'); });
+                                setTimeout(function () {
+                                    isAnimating = false;
+                                    if (cb) cb();
+                                }, 400);
+                            });
+                        }, 380);
+                    }
+
+                    function updateFilterButtons(active) {
+                        document.querySelectorAll('.filter-btn').forEach(function (btn) {
+                            if (btn.dataset.filter === active) {
+                                btn.className = 'filter-btn px-8 py-3 rounded-full font-semibold shadow-sm cursor-pointer transition-all duration-300 bg-primary-container text-on-primary-container';
+                            } else {
+                                btn.className = 'filter-btn px-8 py-3 rounded-full font-medium cursor-pointer transition-all duration-300 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high';
+                            }
+                        });
+                    }
+
+                    function setFilter(filter) {
+                        if (isAnimating) return;
+                        if (filter === currentFilter && filter !== 'buddhism') return;
+
+                        updateFilterButtons(filter);
+
+                        var layout = layouts[filter];
+                        if (!layout) return;
+
+                        isAnimating = true;
+                        currentFilter = filter;
+                        animateSwap(layout);
+                    }
+
+                    // Bind filter buttons
+                    document.querySelectorAll('.filter-btn').forEach(function (btn) {
+                        btn.addEventListener('click', function () {
+                            setFilter(btn.dataset.filter);
+                        });
+                    });
+
+                    // Initial render
+                    renderCards(layouts.all);
+                })();
+        </script>
+
+        <!-- Regional Study Sessions -->
+        <section id="regional-study" class="bg-surface-container-low py-24">
+            <div class="max-w-5xl mx-auto px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold tracking-tight mb-2 font-headline">Regional Study Sessions</h2>
+                    <div class="h-1 w-24 bg-primary mx-auto rounded-full"></div>
+                    <p class="text-on-surface-variant mt-4 max-w-2xl mx-auto">The content is accessible and closely tied
+                        to everyday life, aiming to help more people approach, understand, and benefit from the Dharma.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <!-- North Shore -->
+                    <div
+                        class="group flex flex-col md:flex-row items-center md:items-start gap-6 p-8 bg-surface-container-lowest rounded-xl transition-all hover:bg-white hover:shadow-md">
+                        <div class="w-40 text-center md:text-left shrink-0">
+                            <span class="text-2xl font-bold text-primary italic font-headline">North Shore</span>
+                            <span
+                                class="block text-xs text-on-surface-variant font-bold uppercase tracking-widest mt-1">Alternate
+                                Saturdays</span>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-bold mb-1">North Shore Buddhism Study Session</h4>
+                            <p class="text-on-surface-variant font-light">Held at Glenfield Community Center. Includes
+                                watching Dharma videos, chanting sutras, exploring Buddhist teachings, group sharing,
+                                and enjoying delicious vegetarian food together.</p>
+                            <span class="text-sm font-semibold text-primary/80 mt-2 block italic">10:30 AM - 12:00
+                                PM</span>
+                            <p class="text-xs text-on-surface-variant mt-1">Accessible by bus: 926, 95C, 95B, 941, 906,
+                                917</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-on-surface-variant shrink-0">
+                            <span class="material-symbols-outlined text-sm">location_on</span>
+                            <span class="text-sm font-medium">Glenfield Community Center</span>
+                        </div>
+                    </div>
+                    <!-- East - Panmure -->
+                    <div
+                        class="group flex flex-col md:flex-row items-center md:items-start gap-6 p-8 bg-surface-container-lowest rounded-xl transition-all hover:bg-white hover:shadow-md">
+                        <div class="w-40 text-center md:text-left shrink-0">
+                            <span class="text-2xl font-bold text-primary italic font-headline">East</span>
+                            <span
+                                class="block text-xs text-on-surface-variant font-bold uppercase tracking-widest mt-1">Alternate
+                                Saturdays</span>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-bold mb-1">Panmure Buddhism Study Session</h4>
+                            <p class="text-on-surface-variant font-light">Held at Panmure Community Hall. Whether you're
+                                new to Buddhism or deepening your practice, this is a great opportunity to connect with
+                                like-minded individuals in a peaceful and supportive environment.</p>
+                            <span class="text-sm font-semibold text-primary/80 mt-2 block italic">10:00 AM - 12:00
+                                PM</span>
+                            <p class="text-xs text-on-surface-variant mt-1">Accessible by bus: 70, 72C, 72X, 72M, 711,
+                                712, 352</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-on-surface-variant shrink-0">
+                            <span class="material-symbols-outlined text-sm">location_on</span>
+                            <span class="text-sm font-medium">Panmure Community Hall</span>
+                        </div>
+                    </div>
+                    <!-- West - New Lynn -->
+                    <div
+                        class="group flex flex-col md:flex-row items-center md:items-start gap-6 p-8 bg-surface-container-lowest rounded-xl transition-all hover:bg-white hover:shadow-md">
+                        <div class="w-40 text-center md:text-left shrink-0">
+                            <span class="text-2xl font-bold text-primary italic font-headline">West</span>
+                            <span
+                                class="block text-xs text-on-surface-variant font-bold uppercase tracking-widest mt-1">Alternate
+                                Saturdays</span>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-bold mb-1">New Lynn Buddhism Study Session</h4>
+                            <p class="text-on-surface-variant font-light">Held at New Lynn Community Center. Includes
+                                watching Dharma videos, chanting sutras, exploring Buddhist teachings, group sharing,
+                                and enjoying delicious vegetarian food together.</p>
+                            <span class="text-sm font-semibold text-primary/80 mt-2 block italic">10:30 AM - 1:00
+                                PM</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-on-surface-variant shrink-0">
+                            <span class="material-symbols-outlined text-sm">location_on</span>
+                            <span class="text-sm font-medium">45 Totara Ave, New Lynn</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <p class="text-lg text-on-surface-variant italic mb-6">Bring a friend and come experience a morning
+                        of wisdom, compassion, and community. All are welcome!</p>
+                    <a href="contact.html"
+                        class="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold text-lg transition-all hover:scale-105 editorial-shadow cursor-pointer inline-block">Contact
+                        Us to Join</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#f6f3f2] font-body text-sm leading-relaxed">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-16 max-w-screen-2xl mx-auto">
+            <div class="space-y-6">
+                <div class="text-lg font-bold text-[#6e5e00] font-headline">Guanyin Citta Dharma Door (NZ) Charitable
+                    Trust</div>
+                <p class="text-stone-500 max-w-xs">Dedicated to spreading the wisdom of Buddhism and the compassionate
+                    spirit of Guan Yin Bodhisattva for the benefit of all sentient beings.</p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#6e5e00] shadow-sm hover:scale-110 transition-transform cursor-pointer"
+                        href="https://www.facebook.com/guanyincitta.nz/" target="_blank" aria-label="Facebook">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#6e5e00] shadow-sm hover:scale-110 transition-transform cursor-pointer"
+                        href="https://www.youtube.com/@NZ-GuanYinCitta" target="_blank" aria-label="YouTube">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#6e5e00] shadow-sm hover:scale-110 transition-transform cursor-pointer"
+                        href="mailto:guanyincitta.nz@gmail.com" aria-label="Email">
+                        <span class="material-symbols-outlined text-lg">mail</span>
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h4 class="font-bold text-[#6e5e00] mb-6">Explore</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer"
+                                href="index.html">Home</a></li>
+                        <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer"
+                                href="about.html">About Us</a></li>
+                        <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer"
+                                href="events.html">Events</a></li>
+                        <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer"
+                                href="contact.html">Contact</a></li>
+                        <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer"
+                                href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#6e5e00] mb-6">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="text-stone-500">+64 9 525 0659</li>
+                        <li class="text-stone-500">Unit C, 259 Great South Road, Greenlane, Auckland 1051</li>
+                        <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer"
+                                href="mailto:guanyincitta.nz@gmail.com">guanyincitta.nz@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-white/50 p-8 rounded-3xl">
+                <h4 class="font-bold text-[#6e5e00] mb-4">Legal</h4>
+                <ul class="space-y-3">
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer"
+                            href="legal.html">Legal Status</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-stone-200 py-8 text-center text-stone-400">
+            <p>Copyright &copy; 2025 by Guanyincitta.org.nz. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#164c63",
+                    "secondary-fixed-dim": "#b6c4ff",
+                    "on-secondary-fixed": "#00164f",
+                    "on-primary": "#ffffff",
+                    "outline": "#7d7762",
+                    "inverse-on-surface": "#f3f0ef",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#e4c530",
+                    "surface-tint": "#6e5e00",
+                    "secondary-container": "#7392ff",
+                    "inverse-primary": "#e4c530",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dcd9d9",
+                    "on-surface": "#1c1b1b",
+                    "primary": "#6e5e00",
+                    "tertiary": "#33647b",
+                    "primary-fixed": "#ffe25e",
+                    "background": "#fcf9f8",
+                    "tertiary-fixed": "#c1e8ff",
+                    "tertiary-container": "#a9d9f4",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-bright": "#fcf9f8",
+                    "on-tertiary-fixed": "#001e2b",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#4c4734",
+                    "surface-container-high": "#eae7e7",
+                    "surface-container": "#f0eded",
+                    "surface-variant": "#e5e2e1",
+                    "secondary": "#3456c1",
+                    "outline-variant": "#cfc6ae",
+                    "inverse-surface": "#313030",
+                    "primary-container": "#f0d13c",
+                    "secondary-fixed": "#dce1ff",
+                    "tertiary-fixed-dim": "#9dcde8",
+                    "on-secondary-container": "#00287f",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f6f3f2",
+                    "surface": "#fcf9f8",
+                    "on-primary-fixed-variant": "#534600",
+                    "on-secondary-fixed-variant": "#123da8",
+                    "on-primary-container": "#695900",
+                    "on-background": "#1c1b1b",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#2e6077",
+                    "on-primary-fixed": "#221b00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Be Vietnam Pro"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 24px 48px -12px rgba(28, 27, 27, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl no-border tonal-shift bg-surface-container-low shadow-sm shadow-zinc-200/50 dark:shadow-none">
+<div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto w-full">
+<span class="text-2xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 font-headline">Guanyin Sanctuary</span>
+<div class="hidden md:flex items-center space-x-8 font-be-vietnam text-base tracking-tight">
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 ease-in-out hover:opacity-80" href="#">Sanctuary</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 ease-in-out hover:opacity-80" href="#">Wisdom</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 ease-in-out hover:opacity-80" href="#">Community</a>
+<a class="text-yellow-700 dark:text-yellow-300 font-semibold border-b-2 border-yellow-500 transition-all duration-300 ease-in-out hover:opacity-80" href="#">About</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:opacity-90 active:scale-95">
+            Join Us
+        </button>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Introduction Section -->
+<div class="max-w-7xl mx-auto px-8 mb-24 text-center">
+<span class="label-md uppercase tracking-[0.2em] text-primary font-label font-semibold">About Us</span>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-on-surface mt-4 mb-8">
+            A Journey of <span class="text-primary italic">Compassion</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-3xl mx-auto leading-relaxed">
+            Welcome to the Guanyin Sanctuary. Since our humble beginnings, we have been dedicated to cultivating a space of peace, wisdom, and selfless service in the heart of the modern world.
+        </p>
+</div>
+<!-- Section 1: Our Mission (Image Right) -->
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1 space-y-6">
+<h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight">Our Mission</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                    Our mission is rooted in the compassionate spirit of Guan Yin Bodhisattva. We aim to provide a sanctuary where all sentient beings can find refuge, learn the timeless wisdom of Buddhism, and discover the path to inner peace. We believe that by nurturing the seeds of enlightenment within ourselves, we can create a ripple effect of kindness across the globe.
+                </p>
+<div class="pt-4">
+<button class="text-primary font-bold inline-flex items-center gap-2 group border-b-2 border-primary-container hover:border-primary transition-all">
+                        Discover Our Teachings
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<img class="rounded-2xl editorial-shadow w-full aspect-[4/3] object-cover" data-alt="Serene traditional Buddhist temple architecture with curved golden roofs amidst mist-covered mountains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK63qfIpslSGuDQLuLP9nul49nJ_ddNoTJTSk0vZfrCdE7DqVCwjBxYEwvWwqtxqRpYKIevGDbtJG6F6SWcfN6vQCZPal4fZWfm7L-II-xmTTnHAayNb63hwnh1Fd2_DX6egb7RRuEjb2qI_shoMOJekAEQeDCPiC2Mo2h4IiEyBYjk5wya2W9gLndZnPr7F84BRnc5JGj3aXIb2__U4OCSFM0g9hzYPecPRFaeRuafyqhThC-xKbEo2AYJ-jqwwSXwvR81-klxCI"/>
+</div>
+</div>
+</section>
+<!-- Section 2: Our History (Image Left) -->
+<section class="py-20 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+<div class="order-1">
+<img class="rounded-2xl editorial-shadow w-full aspect-[4/3] object-cover" data-alt="A person sitting in peaceful meditation in a bright, sun-drenched hall with minimalist wooden architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV7L9EXWkSzxp5Nuq04BoUVRO89ZCwulHNJ35xFUKdbSJB5Z_3t5tAv2gZXMD32ZtWqpPRp4UiHWf3AW_jViQ_gDSWUtGCaKmVXRtgIgq5ajypxLOOgn01xqoquMOIDJUfKvXOspjSdJoVau_Lp9834TUsCCLtUgqdJab8wOyBCDwzg4mNvnjrtZAiOWGm-ZD8EEfQUFmkN9MzUmcnsuwA2Hamd983Ogvae-O-Wxg_RBrqn_npRS9QIBRmN6P3h0lt-yxlAwMA1_c"/>
+</div>
+<div class="order-2 space-y-6">
+<h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight">Our History</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                    What began in 1988 as a small mountain retreat has grown into a global community of practice. Over the decades, we have expanded our reach from isolated sanctuaries to vibrant urban centers, ensuring that the light of dharma is accessible to everyone, everywhere. Our history is a testament to the enduring power of faith and the collective aspiration for a more mindful world.
+                </p>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                    Today, we bridge ancient traditions with modern life, using digital platforms and physical spaces to foster a sense of belonging and spiritual growth.
+                </p>
+</div>
+</div>
+</section>
+<!-- Section 3: Our Values (Image Right) -->
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1 space-y-6">
+<h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight">Our Values</h2>
+<div class="space-y-4">
+<div>
+<h3 class="font-bold text-xl text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span> Compassion
+                        </h3>
+<p class="text-on-surface-variant mt-1">Universal love and kindness directed towards all living beings.</p>
+</div>
+<div>
+<h3 class="font-bold text-xl text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span> Wisdom
+                        </h3>
+<p class="text-on-surface-variant mt-1">Deep insight into the nature of reality and the path to liberation.</p>
+</div>
+<div>
+<h3 class="font-bold text-xl text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="volunteer_activism">volunteer_activism</span> Service
+                        </h3>
+<p class="text-on-surface-variant mt-1">Selfless action and dedication to the well-being of the community.</p>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<img class="rounded-2xl editorial-shadow w-full aspect-[4/3] object-cover" data-alt="Close-up portrait of an elderly Buddhist master with wise, smiling eyes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxgjJnwTCm-5iRAk4V0On5jY_URDlw4MgW_GiyjZaQXe10mGolDIyVbr0JsSlRdbeUluN2Rymaf-FnA-Gz5e0HdkQwroNmL4Nt1Z0PouK9vEfh10XvGqMYLd1rDjLTFk0xO0kBuR685eJkhUC-cyvYLdFedWVz7sEAf_D5nNJuVVCkNhgKIq3i2CZ7y6YZR0MiebsN4lNLnmy_TAceDcpIrES-4Sn9ZLrLWr69iIQWT1cunvFWZwn-_a8HwAyiBaiiJ-KJ8vIQa-o"/>
+</div>
+</div>
+</section>
+<!-- Final Call to Action -->
+<section class="py-32">
+<div class="max-w-5xl mx-auto px-8 bg-primary-container/10 rounded-3xl p-16 text-center border border-primary-container/20">
+<h2 class="text-5xl font-headline font-extrabold mb-6 tracking-tight">Join Our Journey</h2>
+<p class="text-xl text-on-surface-variant mb-12 max-w-2xl mx-auto leading-relaxed">
+                Whether you seek wisdom, community, or a path to inner peace, our doors are always open. Become part of our global movement for compassion.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-lg font-bold text-lg transition-all hover:scale-105 editorial-shadow">
+                    Visit a Center
+                </button>
+<button class="bg-white text-primary border-2 border-primary px-10 py-5 rounded-lg font-bold text-lg transition-all hover:bg-primary-container/20">
+                    Support Our Mission
+                </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-50 dark:bg-zinc-950 w-full py-12 px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto w-full text-center md:text-left">
+<div>
+<span class="text-lg font-bold text-zinc-800 dark:text-zinc-200 font-headline mb-4 block">Guanyin Sanctuary</span>
+<p class="text-zinc-500 font-inter text-sm leading-relaxed max-w-xs">© 2024 Guanyin Sanctuary. A Sanctuary for the Modern Soul.</p>
+</div>
+<div class="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4">
+<a class="text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100 font-inter text-sm transition-opacity underline-offset-4 hover:underline" href="#">Mission</a>
+<a class="text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100 font-inter text-sm transition-opacity underline-offset-4 hover:underline" href="#">Lineage</a>
+<a class="text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100 font-inter text-sm transition-opacity underline-offset-4 hover:underline" href="#">Privacy</a>
+<a class="text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100 font-inter text-sm transition-opacity underline-offset-4 hover:underline" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

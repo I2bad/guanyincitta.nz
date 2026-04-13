@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#313030",
+                    "surface-container-high": "#eae7e7",
+                    "surface-dim": "#dcd9d9",
+                    "on-primary-container": "#695900",
+                    "primary-container": "#f0d13c",
+                    "outline-variant": "#cfc6ae",
+                    "secondary-container": "#7392ff",
+                    "on-secondary-fixed-variant": "#123da8",
+                    "on-primary-fixed": "#221b00",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#e4c530",
+                    "on-background": "#1c1b1b",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#dce1ff",
+                    "on-secondary-container": "#00287f",
+                    "error": "#ba1a1a",
+                    "outline": "#7d7762",
+                    "on-tertiary-fixed": "#001e2b",
+                    "on-tertiary-container": "#2e6077",
+                    "on-primary-fixed-variant": "#534600",
+                    "secondary-fixed-dim": "#b6c4ff",
+                    "primary-fixed": "#ffe25e",
+                    "surface-bright": "#fcf9f8",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#164c63",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f6f3f2",
+                    "on-surface-variant": "#4c4734",
+                    "inverse-primary": "#e4c530",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#9dcde8",
+                    "surface-variant": "#e5e2e1",
+                    "on-surface": "#1c1b1b",
+                    "tertiary-container": "#a9d9f4",
+                    "inverse-on-surface": "#f3f0ef",
+                    "tertiary": "#33647b",
+                    "on-error": "#ffffff",
+                    "surface-container": "#f0eded",
+                    "background": "#fcf9f8",
+                    "surface-tint": "#6e5e00",
+                    "on-secondary-fixed": "#00164f",
+                    "primary": "#6e5e00",
+                    "surface": "#fcf9f8",
+                    "tertiary-fixed": "#c1e8ff",
+                    "on-primary": "#ffffff",
+                    "secondary": "#3456c1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Be Vietnam Pro"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 40px -15px rgba(28, 27, 27, 0.06);
+        }
+        .shimmer-gradient {
+            background: linear-gradient(135deg, #6e5e00 0%, #f0d13c 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold text-[#6e5e00] dark:text-[#f0d13c] font-headline tracking-tight" style="">
+                Guanyin Sanctuary
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-headline font-bold tracking-tight text-[#6e5e00] dark:text-[#f0d13c] border-b-2 border-[#f0d13c] pb-1 transition-all duration-300" href="#" style="">Home</a>
+<a class="font-headline font-bold tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#6e5e00] hover:opacity-80 transition-all duration-300" href="#" style="">Teachings</a>
+<a class="font-headline font-bold tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#6e5e00] hover:opacity-80 transition-all duration-300" href="#" style="">Practices</a>
+<a class="font-headline font-bold tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#6e5e00] hover:opacity-80 transition-all duration-300" href="#" style="">Events</a>
+<a class="font-headline font-bold tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#6e5e00] hover:opacity-80 transition-all duration-300" href="#" style="">Community</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant/15">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2" style="">search</span>
+<span class="text-on-surface-variant text-sm" style=""><br/></span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-semibold hover:opacity-90 transition-all active:scale-95 duration-200" style="">
+                    Donate
+                </button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Tranquil Temple" class="w-full h-full object-cover" data-alt="Stunning cinematic wide shot of a traditional Buddhist temple at dawn with golden sunlight filtering through ancient pine trees and soft mist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC27jV0DXPDU_yzQyhygJAmroVDoTXTvdIDjP5BQS_JpSPwZwKFK4V1dpZQAdm_dYfGWhHEKPEFpsotxDiPw1KqmNr4zY0wZx6-cChjrqhv97uY7D_LeFCGCHfbBHnOFoeV2E44dwhWtDVrXgQbEuJvi_2QvsepmfZss8FaC8k8d78KJQD3Iy6NoA6xdJtKhJ1A2-TTnuYS8vV09WDbk7ArAlN92QSqf2KURcxe2VWg0Dib2Kg9Z6uZMzP55dUSXUvwpBx-WFxdczc" style=""/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-screen-2xl mx-auto px-8 w-full">
+<div class="max-w-3xl">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary-container/20 text-primary font-semibold text-sm tracking-widest uppercase mb-6" style="">
+                        Find Inner Peace
+                    </span>
+<h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-tight text-on-surface leading-[1.1] mb-8" style="">
+                        The Sanctuary <br/><span class="text-primary italic" style="">for the Soul.</span>
+</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-10 max-w-xl" style="">
+                        Discover the profound wisdom of Guan Yin Citta Dharma Door. A journey of self-cultivation, compassion, and enlightenment in the modern world.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="shimmer-gradient text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-primary/20 hover:opacity-90 transition-all active:scale-95" style="">
+                            Begin Your Journey
+                        </button>
+<button class="bg-white/10 backdrop-blur-md border border-on-surface/10 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all" style="">
+                            Watch Teachings
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Teachings Section -->
+<section class="py-32 bg-background relative overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-4xl md:text-6xl font-headline font-bold text-on-surface mb-6" style="">The Path to <br/>Enlightenment</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed" style="">We provide guidance through the Buddhist teachings of Guan Yin Bodhisattva, focusing on three fundamental pillars for spiritual growth.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-14 h-14 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary-container transition-colors" style="">
+<span class="material-symbols-outlined" style="">arrow_back</span>
+</button>
+<button class="w-14 h-14 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary-container transition-colors" style="">
+<span class="material-symbols-outlined" style="">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Teaching Card 1 -->
+<div class="group relative bg-surface-container-low rounded-[2rem] p-8 editorial-shadow hover:bg-surface-container-high transition-all duration-500">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-on-primary-container text-3xl" style="">auto_stories</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4" style="">Sutra Recitation</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8" style="">Harness the power of Buddhist scriptures to cleanse the soul and accumulate profound merit for a peaceful life.</p>
+<a class="inline-flex items-center text-primary font-bold group-hover:gap-2 transition-all" href="#" style="">
+                            Learn more <span class="material-symbols-outlined ml-1" style="">trending_flat</span>
+</a>
+</div>
+<!-- Teaching Card 2 -->
+<div class="group relative bg-surface-container-low rounded-[2rem] p-8 editorial-shadow hover:bg-surface-container-high transition-all duration-500">
+<div class="w-16 h-16 bg-secondary-container rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl" style="">set_meal</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4" style="">Life Liberation</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8" style="">Practicing great compassion by releasing captive animals, fostering a deep connection with all living beings.</p>
+<a class="inline-flex items-center text-secondary font-bold group-hover:gap-2 transition-all" href="#" style="">
+                            Learn more <span class="material-symbols-outlined ml-1" style="">trending_flat</span>
+</a>
+</div>
+<!-- Teaching Card 3 -->
+<div class="group relative bg-surface-container-low rounded-[2rem] p-8 editorial-shadow hover:bg-surface-container-high transition-all duration-500">
+<div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-on-primary text-3xl" style="">volunteer_activism</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4" style="">Making Vows</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8" style="">Directing your spiritual energy through sincere commitments to help others and better oneself daily.</p>
+<a class="inline-flex items-center text-primary font-bold group-hover:gap-2 transition-all" href="#" style="">
+                            Learn more <span class="material-symbols-outlined ml-1" style="">trending_flat</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Quote -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-screen-xl mx-auto px-8 relative">
+<span class="absolute -top-12 left-0 text-[12rem] font-headline font-extrabold text-primary/5 leading-none select-none" style="">“</span>
+<div class="relative z-10 pl-12 md:pl-24">
+<h2 class="text-3xl md:text-5xl font-headline font-semibold text-secondary leading-tight italic mb-8 max-w-4xl" style="">
+                        A heart full of compassion is the strongest protection one can ever have in this world.
+                    </h2>
+<p class="text-lg font-bold text-on-surface-variant" style="">— Master Jun Hong Lu</p>
+</div>
+</div>
+</section>
+<!-- Community & Events Section (Bento Style) -->
+<section class="py-32 bg-background">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="text-4xl md:text-6xl font-headline font-bold text-on-surface mb-6" style="">A Shared Sanctuary</h2>
+<p class="text-lg text-on-surface-variant" style="">Join our global community in prayer, meditation, and service.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-[800px]">
+<div class="md:col-span-2 md:row-span-2 relative rounded-[2.5rem] overflow-hidden group shadow-2xl">
+<div class="w-full h-full bg-surface-container-high flex flex-col items-center justify-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-5xl">image</span>
+<span class="font-medium">Image Placeholder</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-10 left-10 text-white">
+<span class="bg-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block" style="">Featured Event</span>
+<h3 class="text-3xl font-headline font-bold mb-4" style="">Annual Wisdom Conference</h3>
+<p class="text-white/80 max-w-md" style="">Join thousands of practitioners worldwide for a weekend of collective prayer and master wisdom.</p>
+</div>
+</div>
+<div class="md:col-span-2 bg-surface-container-high rounded-[2.5rem] p-10 flex flex-col justify-center">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="">calendar_month</span>
+</div>
+<h4 class="text-xl font-headline font-bold" style="">Upcoming Sangha</h4>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-4">
+<div>
+<p class="font-bold" style="">Weekly Meditation</p>
+<p class="text-sm text-on-surface-variant" style="">Every Sunday, 9:00 AM</p>
+</div>
+<button class="text-primary font-bold text-sm" style="">Join Group</button>
+</div>
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-4">
+<div>
+<p class="font-bold" style="">Life Liberation Ceremony</p>
+<p class="text-sm text-on-surface-variant" style="">Nov 15, 7:00 AM • Coastal Bay</p>
+</div>
+<button class="text-primary font-bold text-sm" style="">Join Group</button>
+</div>
+</div>
+</div>
+<div class="bg-primary-container rounded-[2.5rem] p-10 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-5xl text-on-primary-container mb-4" style="">public</span>
+<p class="text-3xl font-headline font-extrabold text-on-primary-container" style="">100+</p>
+<p class="text-on-primary-container/80 font-medium" style="">Global Centers</p>
+</div>
+<div class="bg-secondary rounded-[2.5rem] p-10 flex flex-col items-center justify-center text-center text-white">
+<span class="material-symbols-outlined text-5xl mb-4" style="">groups</span>
+<p class="text-3xl font-headline font-extrabold" style="">5M+</p>
+<p class="text-white/80 font-medium" style="">Practitioners</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Support Us Section -->
+<section class="py-24 px-8">
+<div class="max-w-screen-2xl mx-auto bg-on-surface text-white rounded-[3rem] overflow-hidden flex flex-col md:flex-row">
+<div class="md:w-1/2 p-16 md:p-24">
+<h2 class="text-4xl md:text-6xl font-headline font-bold mb-8" style="">Extend Your <br/><span class="text-primary-container" style="">Compassion</span></h2>
+<p class="text-white/60 text-lg mb-12 leading-relaxed" style="">Your contributions help us print free Buddhist scriptures, maintain our global centers, and provide relief to those in need. Every act of generosity sows the seeds of future blessings.</p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="bg-primary-container text-on-primary-container px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary transition-all hover:text-white" style="">
+                            Donate Now
+                        </button>
+<button class="border border-white/20 hover:bg-white/10 px-10 py-4 rounded-xl font-bold text-lg transition-all" style="">
+                            Volunteer
+                        </button>
+</div>
+</div>
+<div class="md:w-1/2 relative min-h-[400px]">
+<img alt="Guan Yin Statue" class="w-full h-full object-cover" data-alt="Ethereal close-up of a white porcelain Guan Yin statue surrounded by glowing soft lotus petals and serene ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlqgBjTWhY3gFnTQh23AM7XmLieP0zrkOdH1KRpESVrM9YTas1m_JYbu4AdnB9AcJwxI5PqPEjwxDffiSIMLjHIrx0KyNeEL5D2D-acqlIw33Wr6T66xUZG0ac2damPwE9Kd83Whp28MNUb8H2Ok0QnQ14Y3aN_giPSST6qTgxkEQqia1xXVCrnWmxIspLMnPRiyP8hcR3blsiWfL2TnIx75oJaCv53OZdD7R_1onIObNT6mvGQoHcY8osQLGxuYOE3gpmcOBsABs" style=""/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f6f3f2] dark:bg-stone-950 font-body text-sm leading-relaxed">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-16 max-w-screen-2xl mx-auto">
+<div class="space-y-6">
+<div class="text-lg font-bold text-[#6e5e00] font-headline" style="">Guanyin Sanctuary</div>
+<p class="text-stone-500 dark:text-stone-400 max-w-xs" style="">
+                    Dedicated to spreading the wisdom of Buddhism and the compassionate spirit of Guan Yin Bodhisattva for the benefit of all sentient beings.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#6e5e00] shadow-sm hover:scale-110 transition-transform" href="#" style="">
+<span class="material-symbols-outlined text-lg" style="">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#6e5e00] shadow-sm hover:scale-110 transition-transform" href="#" style="">
+<span class="material-symbols-outlined text-lg" style="">mail</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="font-bold text-[#6e5e00] mb-6" style="">Explore</h4>
+<ul class="space-y-4">
+<li class="" style=""><a class="text-stone-500 dark:text-stone-400 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 transition-colors duration-300" href="#" style="">Teachings</a></li>
+<li class="" style=""><a class="text-stone-500 dark:text-stone-400 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 transition-colors duration-300" href="#" style="">Practices</a></li>
+<li class="" style=""><a class="text-stone-500 dark:text-stone-400 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 transition-colors duration-300" href="#" style="">Global Centers</a></li>
+<li class="" style=""><a class="text-stone-500 dark:text-stone-400 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 transition-colors duration-300" href="#" style="">Resources</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-[#6e5e00] mb-6" style="">Support</h4>
+<ul class="space-y-4">
+<li class="" style=""><a class="text-stone-500 dark:text-stone-400 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 transition-colors duration-300" href="#" style="">Contact Us</a></li>
+<li class="" style=""><a class="text-stone-500 dark:text-stone-400 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 transition-colors duration-300" href="#" style="">Privacy Policy</a></li>
+<li class="" style=""><a class="text-stone-500 dark:text-stone-400 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 transition-colors duration-300" href="#" style="">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="bg-white/50 dark:bg-stone-900/50 p-8 rounded-3xl">
+<h4 class="font-bold text-[#6e5e00] mb-4" style="">Newsletter</h4>
+<p class="text-stone-500 dark:text-stone-400 mb-6" style="">Receive weekly dharma wisdom directly in your inbox.</p>
+<div class="flex gap-2">
+<input class="bg-white border-none rounded-xl w-full px-4 text-sm focus:ring-2 focus:ring-[#f0d13c]" placeholder="Email address" type="email"/>
+<button class="bg-[#6e5e00] text-white px-4 py-2 rounded-xl hover:opacity-90 transition-all" style="">
+<span class="material-symbols-outlined" style="">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-stone-200 dark:border-stone-800 py-8 text-center text-stone-400">
+<p class="" style="">© 2024 Guanyin Sanctuary Community. All rights reserved.</p>
+</div>
+</footer>
+</body></html>
