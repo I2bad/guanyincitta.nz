@@ -117,7 +117,12 @@
                 transition: none !important;
             }
         }
+        /* Language switcher */
+        .lang-zh { display: none; }
+        .zh-active .lang-en { display: none; }
+        .zh-active .lang-zh { display: inline; }
     </style>
+    <script>(function(){try{if(localStorage.getItem('guanyin-lang')==='zh')document.documentElement.classList.add('zh-active');}catch(e){}})()</script>
 </head>
 
 <body class="bg-background text-on-surface">
@@ -127,21 +132,25 @@
         <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
             <a href="index.html" class="flex items-center gap-3 cursor-pointer">
                 <img src="images/guanyin-logo.png" alt="Guan Yin Citta Logo" class="h-10 w-10 object-contain" />
-                <span class="text-2xl font-bold tracking-tight text-[#6e5e00] font-headline">Guan Yin Citta NZ</span>
+                <span class="text-2xl font-bold tracking-tight text-[#6e5e00] font-headline"><span class="lang-en">Guan Yin Citta NZ</span><span class="lang-zh">观音堂 新西兰</span></span>
             </a>
             <div class="hidden md:flex items-center gap-8">
                 <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer"
-                    href="index.html">Home</a>
+                    href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
                 <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer"
-                    href="about.html">About Us</a>
+                    href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a>
                 <a class="font-headline font-bold tracking-tight text-[#6e5e00] border-b-2 border-[#f0d13c] pb-1 transition-all duration-300 cursor-pointer"
-                    href="events.html">Events</a>
+                    href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a>
                 <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer"
-                    href="contact.html">Contact</a>
+                    href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a>
             </div>
             <div class="flex items-center gap-4">
+                <div class="flex items-center bg-surface-container rounded-lg p-1">
+                    <button id="lang-btn-en" onclick="switchLang('en')" class="px-3 py-1 rounded-md text-sm font-bold transition-all cursor-pointer">EN</button>
+                    <button id="lang-btn-zh" onclick="switchLang('zh')" class="px-3 py-1 rounded-md text-sm font-bold transition-all cursor-pointer">中文</button>
+                </div>
                 <a href="donate.html"
-                    class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-all active:scale-95 cursor-pointer">Donate</a>
+                    class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-all active:scale-95 cursor-pointer"><span class="lang-en">Donate</span><span class="lang-zh">捐款</span></a>
                 <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
                     class="md:hidden p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
                     <span class="material-symbols-outlined">menu</span>
@@ -149,10 +158,10 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-8 pb-4 space-y-3">
-            <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="index.html">Home</a>
-            <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="about.html">About Us</a>
-            <a class="block font-headline font-bold text-[#6e5e00] py-2 cursor-pointer" href="events.html">Events</a>
-            <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="contact.html">Contact</a>
+            <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+            <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a>
+            <a class="block font-headline font-bold text-[#6e5e00] py-2 cursor-pointer" href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a>
+            <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a>
         </div>
     </nav>
 
@@ -164,10 +173,10 @@
             </div>
             <div class="relative z-10 text-center px-4">
                 <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight mb-4 drop-shadow-lg font-headline">
-                    Events &amp; Programs
+                    <span class="lang-en">Events &amp; Programs</span><span class="lang-zh">活动与项目</span>
                 </h1>
                 <p class="text-white/90 text-lg md:text-xl max-w-2xl mx-auto font-light tracking-wide italic">
-                    Join our regular Buddhism study sessions across Auckland -- all are welcome.
+                    <span class="lang-en">Join our regular Buddhism study sessions across Auckland -- all are welcome.</span><span class="lang-zh">参加我们在奥克兰各地举办的定期学佛班——欢迎所有人。</span>
                 </p>
             </div>
         </section>
@@ -176,12 +185,65 @@
         <section class="max-w-7xl mx-auto px-8 py-12">
             <div class="flex flex-wrap justify-center gap-4" id="filter-bar">
                 <button data-filter="all"
-                    class="filter-btn px-8 py-3 rounded-full font-semibold shadow-sm cursor-pointer transition-all duration-300 bg-primary-container text-on-primary-container">All
-                    Events</button>
+                    class="filter-btn px-8 py-3 rounded-full font-semibold shadow-sm cursor-pointer transition-all duration-300 bg-primary-container text-on-primary-container"><span class="lang-en">All Events</span><span class="lang-zh">所有活动</span></button>
                 <button data-filter="community"
-                    class="filter-btn px-8 py-3 rounded-full font-medium cursor-pointer transition-all duration-300 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high">Community</button>
+                    class="filter-btn px-8 py-3 rounded-full font-medium cursor-pointer transition-all duration-300 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high"><span class="lang-en">Community</span><span class="lang-zh">社区</span></button>
                 <button data-filter="ceremonies"
-                    class="filter-btn px-8 py-3 rounded-full font-medium cursor-pointer transition-all duration-300 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high">Ceremonies</button>
+                    class="filter-btn px-8 py-3 rounded-full font-medium cursor-pointer transition-all duration-300 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high"><span class="lang-en">Ceremonies</span><span class="lang-zh">法会</span></button>
+            </div>
+        </section>
+
+        <!-- Upcoming Special Events -->
+        <section class="max-w-7xl mx-auto px-8 pb-12">
+            <h3 class="text-2xl font-headline font-bold text-on-surface mb-6"><span class="lang-en">Upcoming Special Events</span><span class="lang-zh">近期特别活动</span></h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/20 editorial-shadow flex flex-col gap-3">
+                    <span class="inline-block px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-bold uppercase tracking-widest w-fit"><span class="lang-en">Annual Celebration</span><span class="lang-zh">周年庆典</span></span>
+                    <h4 class="text-lg font-headline font-bold text-on-surface"><span class="lang-en">Auckland Guan Yin Citta 12th Anniversary Celebration</span><span class="lang-zh">奥克兰观音堂12周年庆典</span></h4>
+                    <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                        <span class="material-symbols-outlined text-base">calendar_today</span>
+                        <span><span class="lang-en">Saturday, 26 April 2025</span><span class="lang-zh">2025年4月26日（周六）</span></span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                        <span class="material-symbols-outlined text-base">schedule</span>
+                        <span><span class="lang-en">10:30 AM – 12:00 PM</span><span class="lang-zh">上午10:30 – 中午12:00</span></span>
+                    </div>
+                </div>
+                <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/20 editorial-shadow flex flex-col gap-3">
+                    <span class="inline-block px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-bold uppercase tracking-widest w-fit"><span class="lang-en">Ceremony</span><span class="lang-zh">法会</span></span>
+                    <h4 class="text-lg font-headline font-bold text-on-surface"><span class="lang-en">Vesak Day – Sakyamuni Buddha's Birthday Celebration</span><span class="lang-zh">释迦牟尼佛圣诞庆典（卫塞节）</span></h4>
+                    <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                        <span class="material-symbols-outlined text-base">calendar_today</span>
+                        <span><span class="lang-en">Saturday, 24 May 2025</span><span class="lang-zh">2025年5月24日（周六）</span></span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                        <span class="material-symbols-outlined text-base">schedule</span>
+                        <span><span class="lang-en">10:30 AM – 12:00 PM</span><span class="lang-zh">上午10:30 – 中午12:00</span></span>
+                    </div>
+                </div>
+                <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/20 editorial-shadow flex flex-col gap-3">
+                    <span class="inline-block px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-bold uppercase tracking-widest w-fit"><span class="lang-en">Community</span><span class="lang-zh">社区</span></span>
+                    <h4 class="text-lg font-headline font-bold text-on-surface"><span class="lang-en">Joyful Liberation Day Celebration</span><span class="lang-zh">庆祝文空节</span></h4>
+                    <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                        <span class="material-symbols-outlined text-base">calendar_today</span>
+                        <span><span class="lang-en">Saturday, 21 June 2025</span><span class="lang-zh">2025年6月21日（周六）</span></span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                        <span class="material-symbols-outlined text-base">schedule</span>
+                        <span><span class="lang-en">10:30 AM – 12:00 PM</span><span class="lang-zh">上午10:30 – 中午12:00</span></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Weekly schedule note -->
+            <div class="mt-4 bg-primary-container/10 border border-primary-container/20 rounded-2xl px-6 py-4 flex flex-wrap gap-6 text-sm text-on-surface-variant">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base text-primary">repeat</span>
+                    <span><strong><span class="lang-en">Every Wednesday &amp; Friday:</span><span class="lang-zh">每周三及周五：</span></strong> <span class="lang-en">10:30 AM – 12:00 PM (Practice Center)</span><span class="lang-zh">上午10:30 – 中午12:00（修行中心）</span></span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base text-primary">video_call</span>
+                    <span><strong><span class="lang-en">Every Saturday (Online):</span><span class="lang-zh">每周六（线上）：</span></strong> <span class="lang-en">9:00 AM – 9:00 PM &nbsp;·&nbsp; Zoom: 664 570 7603, Password: 2026</span><span class="lang-zh">上午9:00 – 晚上9:00 · Zoom: 664 570 7603，密码：2026</span></span>
+                </div>
             </div>
         </section>
 
@@ -204,14 +266,13 @@
                             </div>
                             <h2 id="featured-title" class="text-4xl font-bold mb-4 font-headline">Buddhism Study
                                 Sessions</h2>
-                            <p id="featured-desc" class="text-white/80 max-w-xl mb-6">To cultivate good affinities and
+                            <p id="featured-desc" class="text-white/80 max-w-xl mb-6"><span class="lang-en">To cultivate good affinities and
                                 promote the wisdom of Buddhism, we regularly hold Buddhist study classes each month in
                                 Auckland's East, West, and North Shore regions. These sessions cover Buddha's birthday
-                                celebrations, seasonal cultural insights, plain-language Buddhist teachings, and Q&A
-                                discussions.</p>
+                                celebrations, seasonal cultural insights, plain-language Buddhist teachings, and Q&amp;A
+                                discussions.</span><span class="lang-zh">为广结善缘、弘扬佛法智慧，我们每月定期在奥克兰东区、西区及北岸举办学佛班。课程涵盖释迦牟尼佛圣诞庆典、各季文化分享、通俗易懂的佛法讲解及问答交流。</span></p>
                             <a href="contact.html"
-                                class="bg-white text-on-surface px-8 py-3 rounded-lg font-bold hover:bg-primary-container transition-colors cursor-pointer inline-block">Get
-                                in Touch</a>
+                                class="bg-white text-on-surface px-8 py-3 rounded-lg font-bold hover:bg-primary-container transition-colors cursor-pointer inline-block"><span class="lang-en">Get in Touch</span><span class="lang-zh">联系我们</span></a>
                         </div>
                     </div>
                 </div>
@@ -224,8 +285,7 @@
                         <p class="side-desc text-on-surface-variant text-sm mb-4"></p>
                         <div class="flex items-center justify-between mt-auto">
                             <span class="side-schedule text-sm font-semibold italic"></span>
-                            <a href="contact.html" class="text-secondary font-bold hover:underline cursor-pointer">Learn
-                                More</a>
+                            <a href="contact.html" class="text-secondary font-bold hover:underline cursor-pointer"><span class="lang-en">Learn More</span><span class="lang-zh">了解更多</span></a>
                         </div>
                     </div>
                     <div class="small-card bg-surface-container-lowest rounded-xl p-5 shadow-sm border-l-4 cursor-pointer"
@@ -235,8 +295,7 @@
                         <p class="side-desc text-on-surface-variant text-sm mb-4"></p>
                         <div class="flex items-center justify-between mt-auto">
                             <span class="side-schedule text-sm font-semibold italic"></span>
-                            <a href="contact.html" class="text-secondary font-bold hover:underline cursor-pointer">Learn
-                                More</a>
+                            <a href="contact.html" class="text-secondary font-bold hover:underline cursor-pointer"><span class="lang-en">Learn More</span><span class="lang-zh">了解更多</span></a>
                         </div>
                     </div>
                 </div>
@@ -260,24 +319,24 @@
                             category: 'buddhism'
                         },
                         community: {
-                            tag: 'Community',
+                            tag: 'Ceremony',
                             tagColor: 'secondary',
-                            title: 'Health & Wellness Talks',
-                            desc: 'Wellness programs blending Buddhist wisdom with holistic health guidance. Covering mental well-being, vegetarian nutrition, and mindful living.',
-                            location: 'Various Auckland Locations',
-                            schedule: 'Regular Program',
+                            title: 'Vesak Day – Buddha\'s Birthday',
+                            desc: 'Join us to celebrate the birth of Sakyamuni Buddha. An auspicious occasion for reflection, gratitude, and communal prayer.',
+                            location: 'Guan Yin Citta Practice Center, Auckland',
+                            schedule: 'Saturday, 24 May · 10:30 AM – 12:00 PM',
                             image: 'images/community-event.jpg',
                             borderColor: 'border-secondary',
                             tagTextColor: 'text-secondary',
                             category: 'community'
                         },
                         ceremonies: {
-                            tag: 'Annual Event',
+                            tag: 'Annual Celebration',
                             tagColor: 'primary',
-                            title: 'Vegetarian Carnival',
-                            desc: 'Annual community celebration featuring free vegetarian food, cultural performances, wellness activities, and family-friendly entertainment.',
-                            location: 'Auckland Community Venue',
-                            schedule: 'Annual Event',
+                            title: '12th Anniversary Celebration',
+                            desc: 'Auckland Guan Yin Citta\'s 12th Anniversary — a special gathering to celebrate our community\'s journey of compassion and Dharma sharing.',
+                            location: 'Guan Yin Citta Practice Center, Auckland',
+                            schedule: 'Saturday, 26 Apr · 10:30 AM – 12:00 PM',
                             image: 'images/community-volunteering.jpg',
                             borderColor: 'border-primary',
                             tagTextColor: 'text-primary',
@@ -402,10 +461,10 @@
         <section id="regional-study" class="bg-surface-container-low py-24">
             <div class="max-w-5xl mx-auto px-8">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold tracking-tight mb-2 font-headline">Regional Study Sessions</h2>
+                    <h2 class="text-4xl font-bold tracking-tight mb-2 font-headline"><span class="lang-en">Regional Study Sessions</span><span class="lang-zh">各区学佛班</span></h2>
                     <div class="h-1 w-24 bg-primary mx-auto rounded-full"></div>
-                    <p class="text-on-surface-variant mt-4 max-w-2xl mx-auto">The content is accessible and closely tied
-                        to everyday life, aiming to help more people approach, understand, and benefit from the Dharma.
+                    <p class="text-on-surface-variant mt-4 max-w-2xl mx-auto"><span class="lang-en">The content is accessible and closely tied
+                        to everyday life, aiming to help more people approach, understand, and benefit from the Dharma.</span><span class="lang-zh">课程内容贴近生活，通俗易懂，旨在帮助更多人亲近、了解并受益于佛法。</span>
                     </p>
                 </div>
                 <div class="space-y-4">
@@ -413,44 +472,36 @@
                     <div
                         class="group flex flex-col md:flex-row items-center md:items-start gap-6 p-8 bg-surface-container-lowest rounded-xl transition-all hover:bg-white hover:shadow-md">
                         <div class="w-40 text-center md:text-left shrink-0">
-                            <span class="text-2xl font-bold text-primary italic font-headline">North Shore</span>
+                            <span class="text-2xl font-bold text-primary italic font-headline"><span class="lang-en">North Shore</span><span class="lang-zh">北岸</span></span>
                             <span
-                                class="block text-xs text-on-surface-variant font-bold uppercase tracking-widest mt-1">Alternate
-                                Saturdays</span>
+                                class="block text-xs text-on-surface-variant font-bold uppercase tracking-widest mt-1"><span class="lang-en">Selected Saturdays</span><span class="lang-zh">指定周六</span></span>
                         </div>
                         <div class="flex-grow">
-                            <h4 class="text-xl font-bold mb-1">North Shore Buddhism Study Session</h4>
-                            <p class="text-on-surface-variant font-light">Held at Glenfield Community Center. Includes
-                                watching Dharma videos, chanting sutras, exploring Buddhist teachings, group sharing,
-                                and enjoying delicious vegetarian food together.</p>
-                            <span class="text-sm font-semibold text-primary/80 mt-2 block italic">10:30 AM - 12:00
-                                PM</span>
-                            <p class="text-xs text-on-surface-variant mt-1">Accessible by bus: 926, 95C, 95B, 941, 906,
-                                917</p>
+                            <h4 class="text-xl font-bold mb-1"><span class="lang-en">North Shore Buddhism Study Session</span><span class="lang-zh">北岸学佛班</span></h4>
+                            <p class="text-on-surface-variant font-light"><span class="lang-en">Held at Glenfield Mission Hall (Community Center building, next to library). Includes watching Dharma videos, chanting sutras, exploring Buddhist teachings, group sharing, and enjoying delicious vegetarian food together.</span><span class="lang-zh">在Glenfield Mission Hall（社区中心大楼，图书馆旁）举行。活动内容包括观看法会视频、诵经、佛法学习、小组分享及共享美味素食。</span></p>
+                            <span class="text-sm font-semibold text-primary/80 mt-2 block italic"><span class="lang-en">10:00 AM – 12:15 PM</span><span class="lang-zh">上午10:00 – 中午12:15</span></span>
+                            <p class="text-xs text-on-surface-variant mt-1 font-medium"><span class="lang-en">Upcoming dates: Apr 4, Apr 18 &nbsp;·&nbsp; May 9, May 30 &nbsp;·&nbsp; Jun 13, Jun 27</span><span class="lang-zh">近期日期：4月4日、4月18日 · 5月9日、5月30日 · 6月13日、6月27日</span></p>
+                            <p class="text-xs text-on-surface-variant mt-1"><span class="lang-en">Accessible by bus: 926, 95C, 941, 906, 917</span><span class="lang-zh">公共交通：926、95C、941、906、917路公车</span></p>
                         </div>
                         <div class="flex items-center gap-2 text-on-surface-variant shrink-0">
                             <span class="material-symbols-outlined text-sm">location_on</span>
-                            <span class="text-sm font-medium">Glenfield Community Center</span>
+                            <span class="text-sm font-medium">Glenfield Mission Hall</span>
                         </div>
                     </div>
                     <!-- East - Panmure -->
                     <div
                         class="group flex flex-col md:flex-row items-center md:items-start gap-6 p-8 bg-surface-container-lowest rounded-xl transition-all hover:bg-white hover:shadow-md">
                         <div class="w-40 text-center md:text-left shrink-0">
-                            <span class="text-2xl font-bold text-primary italic font-headline">East</span>
+                            <span class="text-2xl font-bold text-primary italic font-headline"><span class="lang-en">East</span><span class="lang-zh">东区</span></span>
                             <span
-                                class="block text-xs text-on-surface-variant font-bold uppercase tracking-widest mt-1">Alternate
-                                Saturdays</span>
+                                class="block text-xs text-on-surface-variant font-bold uppercase tracking-widest mt-1"><span class="lang-en">Selected Saturdays</span><span class="lang-zh">指定周六</span></span>
                         </div>
                         <div class="flex-grow">
-                            <h4 class="text-xl font-bold mb-1">Panmure Buddhism Study Session</h4>
-                            <p class="text-on-surface-variant font-light">Held at Panmure Community Hall. Whether you're
-                                new to Buddhism or deepening your practice, this is a great opportunity to connect with
-                                like-minded individuals in a peaceful and supportive environment.</p>
-                            <span class="text-sm font-semibold text-primary/80 mt-2 block italic">10:00 AM - 12:00
-                                PM</span>
-                            <p class="text-xs text-on-surface-variant mt-1">Accessible by bus: 70, 72C, 72X, 72M, 711,
-                                712, 352</p>
+                            <h4 class="text-xl font-bold mb-1"><span class="lang-en">Panmure Buddhism Study Session</span><span class="lang-zh">潘牟尔学佛班</span></h4>
+                            <p class="text-on-surface-variant font-light"><span class="lang-en">Held at Panmure Community Hall. Whether you're new to Buddhism or deepening your practice, this is a great opportunity to connect with like-minded individuals in a peaceful and supportive environment.</span><span class="lang-zh">在潘牟尔社区中心举行。无论您是初学佛法还是深化修行，这都是在平和友善的环境中结交同修的好机会。</span></p>
+                            <span class="text-sm font-semibold text-primary/80 mt-2 block italic"><span class="lang-en">10:30 AM – 2:00 PM</span><span class="lang-zh">上午10:30 – 下午2:00</span></span>
+                            <p class="text-xs text-on-surface-variant mt-1 font-medium"><span class="lang-en">Upcoming dates: Apr 11 &nbsp;·&nbsp; May 9 &nbsp;·&nbsp; Jun 20</span><span class="lang-zh">近期日期：4月11日 · 5月9日 · 6月20日</span></p>
+                            <p class="text-xs text-on-surface-variant mt-1"><span class="lang-en">Accessible by bus: 70, 72C/XM, 711, 712, 352</span><span class="lang-zh">公共交通：70、72C/XM、711、712、352路公车</span></p>
                         </div>
                         <div class="flex items-center gap-2 text-on-surface-variant shrink-0">
                             <span class="material-symbols-outlined text-sm">location_on</span>
@@ -461,31 +512,27 @@
                     <div
                         class="group flex flex-col md:flex-row items-center md:items-start gap-6 p-8 bg-surface-container-lowest rounded-xl transition-all hover:bg-white hover:shadow-md">
                         <div class="w-40 text-center md:text-left shrink-0">
-                            <span class="text-2xl font-bold text-primary italic font-headline">West</span>
+                            <span class="text-2xl font-bold text-primary italic font-headline"><span class="lang-en">West</span><span class="lang-zh">西区</span></span>
                             <span
-                                class="block text-xs text-on-surface-variant font-bold uppercase tracking-widest mt-1">Alternate
-                                Saturdays</span>
+                                class="block text-xs text-on-surface-variant font-bold uppercase tracking-widest mt-1"><span class="lang-en">Selected Saturdays</span><span class="lang-zh">指定周六</span></span>
                         </div>
                         <div class="flex-grow">
-                            <h4 class="text-xl font-bold mb-1">New Lynn Buddhism Study Session</h4>
-                            <p class="text-on-surface-variant font-light">Held at New Lynn Community Center. Includes
-                                watching Dharma videos, chanting sutras, exploring Buddhist teachings, group sharing,
-                                and enjoying delicious vegetarian food together.</p>
-                            <span class="text-sm font-semibold text-primary/80 mt-2 block italic">10:30 AM - 1:00
-                                PM</span>
+                            <h4 class="text-xl font-bold mb-1"><span class="lang-en">New Lynn Buddhism Study Session</span><span class="lang-zh">新林恩学佛班</span></h4>
+                            <p class="text-on-surface-variant font-light"><span class="lang-en">Held at the Glass House, 45 Totara Ave, New Lynn. Includes watching Dharma videos, chanting sutras, exploring Buddhist teachings, group sharing, and enjoying delicious vegetarian food together.</span><span class="lang-zh">在新林恩Glass House（45 Totara Ave）举行。活动内容包括观看法会视频、诵经、佛法学习、小组分享及共享美味素食。</span></p>
+                            <span class="text-sm font-semibold text-primary/80 mt-2 block italic"><span class="lang-en">10:30 AM – 1:30 PM</span><span class="lang-zh">上午10:30 – 下午1:30</span></span>
+                            <p class="text-xs text-on-surface-variant mt-1 font-medium"><span class="lang-en">Upcoming dates: Apr 18 &nbsp;·&nbsp; May 16 &nbsp;·&nbsp; Jun 13</span><span class="lang-zh">近期日期：4月18日 · 5月16日 · 6月13日</span></p>
                         </div>
                         <div class="flex items-center gap-2 text-on-surface-variant shrink-0">
                             <span class="material-symbols-outlined text-sm">location_on</span>
-                            <span class="text-sm font-medium">45 Totara Ave, New Lynn</span>
+                            <span class="text-sm font-medium">Glass House, 45 Totara Ave</span>
                         </div>
                     </div>
                 </div>
                 <div class="text-center mt-12">
-                    <p class="text-lg text-on-surface-variant italic mb-6">Bring a friend and come experience a morning
-                        of wisdom, compassion, and community. All are welcome!</p>
+                    <p class="text-lg text-on-surface-variant italic mb-6"><span class="lang-en">Bring a friend and come experience a morning
+                        of wisdom, compassion, and community. All are welcome!</span><span class="lang-zh">带上朋友，一起来体验充满智慧、慈悲与温情的美好时光。欢迎所有人！</span></p>
                     <a href="contact.html"
-                        class="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold text-lg transition-all hover:scale-105 editorial-shadow cursor-pointer inline-block">Contact
-                        Us to Join</a>
+                        class="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold text-lg transition-all hover:scale-105 editorial-shadow cursor-pointer inline-block"><span class="lang-en">Contact Us to Join</span><span class="lang-zh">联系我们参加</span></a>
                 </div>
             </div>
         </section>
@@ -495,10 +542,9 @@
     <footer class="bg-[#f6f3f2] font-body text-sm leading-relaxed">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-16 max-w-screen-2xl mx-auto">
             <div class="space-y-6">
-                <div class="text-lg font-bold text-[#6e5e00] font-headline">Guanyin Citta Dharma Door (NZ) Charitable
-                    Trust</div>
-                <p class="text-stone-500 max-w-xs">Dedicated to spreading the wisdom of Buddhism and the compassionate
-                    spirit of Guan Yin Bodhisattva for the benefit of all sentient beings.</p>
+                <div class="text-lg font-bold text-[#6e5e00] font-headline"><span class="lang-en">Guanyin Citta Dharma Door (NZ) Charitable Trust</span><span class="lang-zh">观音堂法门（新西兰）慈善信托</span></div>
+                <p class="text-stone-500 max-w-xs"><span class="lang-en">Dedicated to spreading the wisdom of Buddhism and the compassionate
+                    spirit of Guan Yin Bodhisattva for the benefit of all sentient beings.</span><span class="lang-zh">致力于弘扬佛教智慧与观世音菩萨慈悲精神，利益一切有情众生。</span></p>
                 <div class="flex gap-4">
                     <a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#6e5e00] shadow-sm hover:scale-110 transition-transform cursor-pointer"
                         href="https://www.facebook.com/guanyincitta.nz/" target="_blank" aria-label="Facebook">
@@ -522,22 +568,22 @@
             </div>
             <div class="grid grid-cols-2 gap-8">
                 <div>
-                    <h4 class="font-bold text-[#6e5e00] mb-6">Explore</h4>
+                    <h4 class="font-bold text-[#6e5e00] mb-6"><span class="lang-en">Explore</span><span class="lang-zh">导航</span></h4>
                     <ul class="space-y-4">
                         <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer"
-                                href="index.html">Home</a></li>
+                                href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li>
                         <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer"
-                                href="about.html">About Us</a></li>
+                                href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a></li>
                         <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer"
-                                href="events.html">Events</a></li>
+                                href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a></li>
                         <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer"
-                                href="contact.html">Contact</a></li>
+                                href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a></li>
                         <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer"
-                                href="donate.html">Donate</a></li>
+                                href="donate.html"><span class="lang-en">Donate</span><span class="lang-zh">捐款</span></a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-[#6e5e00] mb-6">Contact</h4>
+                    <h4 class="font-bold text-[#6e5e00] mb-6"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></h4>
                     <ul class="space-y-4">
                         <li class="text-stone-500">+64 9 525 0659</li>
                         <li class="text-stone-500">Unit C, 259 Great South Road, Greenlane, Auckland 1051</li>
@@ -547,18 +593,19 @@
                 </div>
             </div>
             <div class="bg-white/50 p-8 rounded-3xl">
-                <h4 class="font-bold text-[#6e5e00] mb-4">Legal</h4>
+                <h4 class="font-bold text-[#6e5e00] mb-4"><span class="lang-en">Legal</span><span class="lang-zh">法律</span></h4>
                 <ul class="space-y-3">
                     <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer"
-                            href="legal.html">Legal Status</a></li>
+                            href="legal.html"><span class="lang-en">Legal Status</span><span class="lang-zh">法律状态</span></a></li>
                 </ul>
             </div>
         </div>
         <div class="border-t border-stone-200 py-8 text-center text-stone-400">
-            <p>Copyright &copy; 2025 by Guanyincitta.org.nz. All rights reserved.</p>
+            <p><span class="lang-en">Copyright &copy; 2025 by Guanyincitta.org.nz. All rights reserved.</span><span class="lang-zh">版权所有 © 2025 Guanyincitta.org.nz。保留所有权利。</span></p>
         </div>
     </footer>
 
+<script src="js/lang.js"></script>
 </body>
 
 </html>

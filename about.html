@@ -56,7 +56,12 @@
     <style>
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         .editorial-shadow { box-shadow: 0 24px 48px -12px rgba(28, 27, 27, 0.06); }
+        /* Language switcher */
+        .lang-zh { display: none; }
+        .zh-active .lang-en { display: none; }
+        .zh-active .lang-zh { display: inline; }
     </style>
+    <script>(function(){try{if(localStorage.getItem('guanyin-lang')==='zh')document.documentElement.classList.add('zh-active');}catch(e){}})()</script>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
 
@@ -65,38 +70,42 @@
     <div class="flex items-center justify-between px-8 py-4 max-w-screen-2xl mx-auto w-full">
         <a href="index.html" class="flex items-center gap-3 cursor-pointer">
             <img src="images/guanyin-logo.png" alt="Guan Yin Citta Logo" class="h-10 w-10 object-contain"/>
-            <span class="text-2xl font-bold tracking-tight text-[#6e5e00] font-headline">Guan Yin Citta NZ</span>
+            <span class="text-2xl font-bold tracking-tight text-[#6e5e00] font-headline"><span class="lang-en">Guan Yin Citta NZ</span><span class="lang-zh">观音堂 新西兰</span></span>
         </a>
         <div class="hidden md:flex items-center gap-8">
-            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="index.html">Home</a>
-            <a class="font-headline font-bold tracking-tight text-[#6e5e00] border-b-2 border-[#f0d13c] pb-1 transition-all duration-300 cursor-pointer" href="about.html">About Us</a>
-            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="events.html">Events</a>
-            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="contact.html">Contact</a>
+            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+            <a class="font-headline font-bold tracking-tight text-[#6e5e00] border-b-2 border-[#f0d13c] pb-1 transition-all duration-300 cursor-pointer" href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a>
+            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a>
+            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a>
         </div>
         <div class="flex items-center gap-4">
-            <a href="donate.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:opacity-90 active:scale-95 cursor-pointer">Donate</a>
+            <div class="flex items-center bg-surface-container rounded-lg p-1">
+                <button id="lang-btn-en" onclick="switchLang('en')" class="px-3 py-1 rounded-md text-sm font-bold transition-all cursor-pointer">EN</button>
+                <button id="lang-btn-zh" onclick="switchLang('zh')" class="px-3 py-1 rounded-md text-sm font-bold transition-all cursor-pointer">中文</button>
+            </div>
+            <a href="donate.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:opacity-90 active:scale-95 cursor-pointer"><span class="lang-en">Donate</span><span class="lang-zh">捐款</span></a>
             <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden px-8 pb-4 space-y-3">
-        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="index.html">Home</a>
-        <a class="block font-headline font-bold text-[#6e5e00] py-2 cursor-pointer" href="about.html">About Us</a>
-        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="events.html">Events</a>
-        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="contact.html">Contact</a>
+        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+        <a class="block font-headline font-bold text-[#6e5e00] py-2 cursor-pointer" href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a>
+        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a>
+        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a>
     </div>
 </nav>
 
 <main class="pt-32 pb-24">
     <!-- Introduction Section -->
     <div class="max-w-7xl mx-auto px-8 mb-24 text-center">
-        <span class="label-md uppercase tracking-[0.2em] text-primary font-label font-semibold">About Us</span>
+        <span class="label-md uppercase tracking-[0.2em] text-primary font-label font-semibold"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></span>
         <h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-on-surface mt-4 mb-8">
-            About Guan Yin Citta <span class="text-primary italic">Dharma Door</span>
+            <span class="lang-en">About Guan Yin Citta <span class="text-primary italic">Dharma Door</span></span><span class="lang-zh">关于观音堂 <span class="text-primary italic">法门</span></span>
         </h1>
         <p class="text-xl text-on-surface-variant max-w-3xl mx-auto leading-relaxed">
-            Guan Yin Citta Dharma Door is a highly efficacious Mahayana Buddhist practice transmitted by Guan Yin Bodhisattva to deliver sentient beings in this modern age, suited to the karmic conditions and spiritual capacity of contemporary practitioners.
+            <span class="lang-en">Guan Yin Citta Dharma Door is a highly efficacious Mahayana Buddhist practice transmitted by Guan Yin Bodhisattva to deliver sentient beings in this modern age, suited to the karmic conditions and spiritual capacity of contemporary practitioners.</span><span class="lang-zh">观音堂法门是观世音菩萨传授的大乘佛法修行法门，专为度化现代众生而设，契合当代修行者的因缘与根器，具有殊胜的修行功效。</span>
         </p>
     </div>
 
@@ -104,16 +113,16 @@
     <section class="py-20">
         <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
             <div class="order-2 md:order-1 space-y-6">
-                <h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight">The Three Golden Practices</h2>
+                <h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight"><span class="lang-en">The Three Golden Practices</span><span class="lang-zh">三大法宝</span></h2>
                 <p class="text-lg text-on-surface-variant leading-relaxed">
-                    Guan Yin Citta emphasizes the Three Golden Practices: sutra recitation, making vows, and life liberation (fangsheng). These methods enable practitioners to awaken and help others, freeing themselves from suffering and illness, resolving conflicts and karmic obstacles, and cultivating wisdom and inner peace.
+                    <span class="lang-en">Guan Yin Citta emphasizes the Three Golden Practices: sutra recitation, making vows, and life liberation (fangsheng). These methods enable practitioners to awaken and help others, freeing themselves from suffering and illness, resolving conflicts and karmic obstacles, and cultivating wisdom and inner peace.</span><span class="lang-zh">观音堂法门以三大法宝为核心：诵经、发愿与放生。这些修行方法能帮助修行者觉悟并利益他人，从痛苦与病患中解脱，化解冤结与业障，培养智慧与内心平静。</span>
                 </p>
                 <p class="text-lg text-on-surface-variant leading-relaxed">
-                    Owing to its remarkable efficacy and swift results, Guan Yin Citta has touched the hearts of millions worldwide and continues to grow rapidly.
+                    <span class="lang-en">Owing to its remarkable efficacy and swift results, Guan Yin Citta has touched the hearts of millions worldwide and continues to grow rapidly.</span><span class="lang-zh">由于其显著的功效与快速的感应，观音堂法门已感动全球数百万众生，并持续快速弘扬。</span>
                 </p>
                 <div class="pt-4">
                     <a href="events.html" class="text-primary font-bold inline-flex items-center gap-2 group border-b-2 border-primary-container hover:border-primary transition-all cursor-pointer">
-                        View Our Events
+                        <span class="lang-en">View Our Events</span><span class="lang-zh">查看我们的活动</span>
                         <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </a>
                 </div>
@@ -132,25 +141,25 @@
                 <img class="rounded-2xl editorial-shadow w-full aspect-[3/4] object-cover object-top" alt="Master Jun Hong Lu receiving the British Community Honours Award" src="images/master-lu-award.jpg"/>
             </div>
             <div class="order-2 space-y-6">
-                <h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight">About Master Jun Hong Lu</h2>
-                <p class="text-sm font-semibold text-primary uppercase tracking-widest">Founder of Guan Yin Citta Dharma Door &amp; Renowned Overseas Chinese Leader</p>
+                <h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight"><span class="lang-en">About Master Jun Hong Lu</span><span class="lang-zh">关于卢军宏老师</span></h2>
+                <p class="text-sm font-semibold text-primary uppercase tracking-widest"><span class="lang-en">Founder of Guan Yin Citta Dharma Door &amp; Renowned Overseas Chinese Leader</span><span class="lang-zh">观音堂法门创始人 &amp; 著名海外华人领袖</span></p>
                 <p class="text-lg text-on-surface-variant leading-relaxed">
-                    Master Jun Hong Lu, the revered founder of Guan Yin Citta Dharma Door and a patriotic leader of the overseas Chinese community, peacefully entered Nirvana on November 10, 2021, at 4:00 a.m. in Sydney, Australia, at the age of 62, having fulfilled his vows in this world.
+                    <span class="lang-en">Master Jun Hong Lu, the revered founder of Guan Yin Citta Dharma Door and a patriotic leader of the overseas Chinese community, peacefully entered Nirvana on November 10, 2021, at 4:00 a.m. in Sydney, Australia, at the age of 62, having fulfilled his vows in this world.</span><span class="lang-zh">卢军宏老师是观音堂法门的敬仰创始人，也是海外华人社区的爱国领袖。他于2021年11月10日凌晨4时，在澳大利亚悉尼安详圆寂，世寿62岁，此生愿力已满。</span>
                 </p>
                 <p class="text-lg text-on-surface-variant leading-relaxed">
-                    Master Lu began his Dharma propagation in 1997 and formally founded Guan Yin Citta Dharma Door in 2006. Over decades of tireless dedication, he compassionately guided countless sentient beings across the globe from confusion and suffering toward the path of enlightenment.
+                    <span class="lang-en">Master Lu began his Dharma propagation in 1997 and formally founded Guan Yin Citta Dharma Door in 2006. Over decades of tireless dedication, he compassionately guided countless sentient beings across the globe from confusion and suffering toward the path of enlightenment.</span><span class="lang-zh">卢老师于1997年开始弘法，并于2006年正式创立观音堂法门。数十年来，他不辞辛劳，以慈悲之心引领全球无数众生，从迷惑与苦难中走向觉悟之道。</span>
                 </p>
                 <p class="text-lg text-on-surface-variant leading-relaxed">
-                    Master Lu's achievements in propagating Buddhism, preserving Chinese culture, and promoting interfaith harmony gained international recognition. He was repeatedly invited to deliver speeches by UNESCO and was highly respected in global religious and cultural circles.
+                    <span class="lang-en">Master Lu's achievements in propagating Buddhism, preserving Chinese culture, and promoting interfaith harmony gained international recognition. He was repeatedly invited to deliver speeches by UNESCO and was highly respected in global religious and cultural circles.</span><span class="lang-zh">卢老师在弘扬佛法、传承中华文化及促进宗教和谐方面的成就获得了国际社会的广泛认可。他多次应邀在联合国教科文组织发表演讲，在全球宗教与文化界享有崇高声誉。</span>
                 </p>
                 <div class="mt-8 p-6 bg-surface-container-lowest rounded-2xl">
-                    <h3 class="font-headline font-bold text-on-surface mb-4">Titles and Honors</h3>
+                    <h3 class="font-headline font-bold text-on-surface mb-4"><span class="lang-en">Titles and Honors</span><span class="lang-zh">头衔与荣誉</span></h3>
                     <ul class="space-y-2 text-on-surface-variant">
-                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> Chairman of Australian Oriental Media Buddhist Charity Association</li>
-                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> President, Australian Chinese Buddhist Association</li>
-                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> Justice of the Peace, New South Wales, Australia</li>
-                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> Datuk honorary title holder, Malaysia</li>
-                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> Honorary Visiting Professor, University of Siena, Italy</li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> <span class="lang-en">Chairman of Australian Oriental Media Buddhist Charity Association</span><span class="lang-zh">澳大利亚东方台佛教慈善功德会会长</span></li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> <span class="lang-en">President, Australian Chinese Buddhist Association</span><span class="lang-zh">澳大利亚中华佛教协会会长</span></li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> <span class="lang-en">Justice of the Peace, New South Wales, Australia</span><span class="lang-zh">澳大利亚新南威尔士州太平绅士</span></li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> <span class="lang-en">Datuk honorary title holder, Malaysia</span><span class="lang-zh">马来西亚拿督荣誉称号获得者</span></li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> <span class="lang-en">Honorary Visiting Professor, University of Siena, Italy</span><span class="lang-zh">意大利锡耶纳大学荣誉客座教授</span></li>
                     </ul>
                 </div>
             </div>
@@ -161,12 +170,12 @@
     <section class="py-20">
         <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
             <div class="order-2 md:order-1 space-y-6">
-                <h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight">Our Practice Center</h2>
+                <h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight"><span class="lang-en">Our Practice Center</span><span class="lang-zh">我们的修行中心</span></h2>
                 <p class="text-lg text-on-surface-variant leading-relaxed">
-                    Guan Yin Citta (NZ) Charitable Trust is the only officially designated Buddhist charitable organization of Guan Yin Citta Dharma Door in New Zealand, registered in Auckland. The trust is committed to promoting Buddhist culture, advancing community welfare, advocating vegetarianism and environmental awareness, and serving both local communities and those with karmic affinity.
+                    <span class="lang-en">Guan Yin Citta (NZ) Charitable Trust is the only officially designated Buddhist charitable organization of Guan Yin Citta Dharma Door in New Zealand, registered in Auckland. The trust is committed to promoting Buddhist culture, advancing community welfare, advocating vegetarianism and environmental awareness, and serving both local communities and those with karmic affinity.</span><span class="lang-zh">观音堂（新西兰）慈善信托是观音堂法门在新西兰唯一官方指定的佛教慈善机构，在奥克兰注册成立。本信托致力于弘扬佛教文化、促进社区福祉、倡导素食主义与环保意识，服务本地社区及有缘大众。</span>
                 </p>
                 <p class="text-lg text-on-surface-variant leading-relaxed">
-                    Through a wide range of public-interest initiatives, the Trust actively promotes Buddhist values. These include the annual Vegetarian Carnival, as well as regular programs such as community Buddhist study sessions, health and wellness talks, and Chinese language classes for children.
+                    <span class="lang-en">Through a wide range of public-interest initiatives, the Trust actively promotes Buddhist values. These include the annual Vegetarian Carnival, as well as regular programs such as community Buddhist study sessions, health and wellness talks, and Chinese language classes for children.</span><span class="lang-zh">通过多种公益活动，本信托积极推广佛教价值观。包括每年举办的素食嘉年华，以及常规项目如社区学佛班、健康讲座和儿童中文课程。</span>
                 </p>
             </div>
             <div class="order-1 md:order-2">
@@ -179,12 +188,12 @@
     <section class="py-20 bg-surface-container-low">
         <div class="max-w-7xl mx-auto px-8">
             <div class="max-w-4xl mx-auto text-center space-y-6">
-                <h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight">Our Mission</h2>
+                <h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight"><span class="lang-en">Our Mission</span><span class="lang-zh">我们的使命</span></h2>
                 <p class="text-lg text-on-surface-variant leading-relaxed">
-                    Our trust follows the compassionate spirit of Guan Yin Bodhisattva, with a mission to promote true Buddhist teachings, encourage vegetarianism and environmental consciousness, and support the well-being of individuals and communities. By combining cultural education and community outreach, we aim to inspire kindness and build a society rooted in compassion, clarity, and wisdom.
+                    <span class="lang-en">Our trust follows the compassionate spirit of Guan Yin Bodhisattva, with a mission to promote true Buddhist teachings, encourage vegetarianism and environmental consciousness, and support the well-being of individuals and communities. By combining cultural education and community outreach, we aim to inspire kindness and build a society rooted in compassion, clarity, and wisdom.</span><span class="lang-zh">我们的信托秉承观世音菩萨的慈悲精神，以弘扬真实佛法、倡导素食与环保意识、支持个人与社区福祉为使命。通过文化教育与社区推广，我们致力于激发善心，构建一个以慈悲、清明与智慧为根基的社会。</span>
                 </p>
                 <p class="text-lg text-on-surface-variant leading-relaxed">
-                    We aspire to be a bridge between the wisdom of Buddhism and the broader public, practicing the spirit of the Bodhisattva path, forging wholesome connections, and helping more people attain happiness, clarity, and peace.
+                    <span class="lang-en">We aspire to be a bridge between the wisdom of Buddhism and the broader public, practicing the spirit of the Bodhisattva path, forging wholesome connections, and helping more people attain happiness, clarity, and peace.</span><span class="lang-zh">我们愿成为佛教智慧与广大民众之间的桥梁，践行菩萨道精神，广结善缘，帮助更多人获得幸福、清明与内心平静。</span>
                 </p>
             </div>
         </div>
@@ -193,28 +202,28 @@
     <!-- Our Values -->
     <section class="py-20">
         <div class="max-w-7xl mx-auto px-8">
-            <h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight text-center mb-16">Our Values</h2>
+            <h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight text-center mb-16"><span class="lang-en">Our Values</span><span class="lang-zh">我们的价值观</span></h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-surface-container-low rounded-[2rem] p-8 editorial-shadow text-center">
                     <div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <span class="material-symbols-outlined text-on-primary-container text-3xl">favorite</span>
                     </div>
-                    <h3 class="font-bold text-xl text-on-surface mb-2">Compassion</h3>
-                    <p class="text-on-surface-variant">Universal love and kindness directed towards all living beings, inspired by Guan Yin Bodhisattva.</p>
+                    <h3 class="font-bold text-xl text-on-surface mb-2"><span class="lang-en">Compassion</span><span class="lang-zh">慈悲</span></h3>
+                    <p class="text-on-surface-variant"><span class="lang-en">Universal love and kindness directed towards all living beings, inspired by Guan Yin Bodhisattva.</span><span class="lang-zh">受观世音菩萨启迪，对一切众生给予无私的爱与善意。</span></p>
                 </div>
                 <div class="bg-surface-container-low rounded-[2rem] p-8 editorial-shadow text-center">
                     <div class="w-16 h-16 bg-secondary-container rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <span class="material-symbols-outlined text-on-secondary-container text-3xl">lightbulb</span>
                     </div>
-                    <h3 class="font-bold text-xl text-on-surface mb-2">Wisdom</h3>
-                    <p class="text-on-surface-variant">Deep insight into the nature of reality and the path to liberation through Buddhist teachings.</p>
+                    <h3 class="font-bold text-xl text-on-surface mb-2"><span class="lang-en">Wisdom</span><span class="lang-zh">智慧</span></h3>
+                    <p class="text-on-surface-variant"><span class="lang-en">Deep insight into the nature of reality and the path to liberation through Buddhist teachings.</span><span class="lang-zh">通过佛法修学，深刻洞见实相本质与解脱之道。</span></p>
                 </div>
                 <div class="bg-surface-container-low rounded-[2rem] p-8 editorial-shadow text-center">
                     <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <span class="material-symbols-outlined text-on-primary text-3xl">volunteer_activism</span>
                     </div>
-                    <h3 class="font-bold text-xl text-on-surface mb-2">Service</h3>
-                    <p class="text-on-surface-variant">Selfless action and dedication to the well-being of the community and all sentient beings.</p>
+                    <h3 class="font-bold text-xl text-on-surface mb-2"><span class="lang-en">Service</span><span class="lang-zh">奉献</span></h3>
+                    <p class="text-on-surface-variant"><span class="lang-en">Selfless action and dedication to the well-being of the community and all sentient beings.</span><span class="lang-zh">以无私的行动，致力于社区与一切众生的福祉。</span></p>
                 </div>
             </div>
         </div>
@@ -223,16 +232,16 @@
     <!-- Call to Action -->
     <section class="py-32">
         <div class="max-w-5xl mx-auto px-8 bg-primary-container/10 rounded-3xl p-16 text-center border border-primary-container/20">
-            <h2 class="text-5xl font-headline font-extrabold mb-6 tracking-tight">Join Our Journey</h2>
+            <h2 class="text-5xl font-headline font-extrabold mb-6 tracking-tight"><span class="lang-en">Join Our Journey</span><span class="lang-zh">加入我们的旅程</span></h2>
             <p class="text-xl text-on-surface-variant mb-12 max-w-2xl mx-auto leading-relaxed">
-                May more sentient beings of karmic affinity embark upon Guan Yin Bodhisattva's vessel of salvation -- to purify the mind, be free from suffering, and advance toward enlightenment.
+                <span class="lang-en">May more sentient beings of karmic affinity embark upon Guan Yin Bodhisattva's vessel of salvation -- to purify the mind, be free from suffering, and advance toward enlightenment.</span><span class="lang-zh">愿更多有缘众生登上观世音菩萨的慈航——净化心灵，离苦得乐，迈向觉悟。</span>
             </p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
                 <a href="events.html" class="bg-primary text-on-primary px-10 py-5 rounded-lg font-bold text-lg transition-all hover:scale-105 editorial-shadow cursor-pointer inline-block">
-                    View Events
+                    <span class="lang-en">View Events</span><span class="lang-zh">查看活动</span>
                 </a>
                 <a href="contact.html" class="bg-white text-primary border-2 border-primary px-10 py-5 rounded-lg font-bold text-lg transition-all hover:bg-primary-container/20 cursor-pointer inline-block">
-                    Contact Us
+                    <span class="lang-en">Contact Us</span><span class="lang-zh">联系我们</span>
                 </a>
             </div>
         </div>
@@ -243,8 +252,8 @@
 <footer class="bg-[#f6f3f2] font-body text-sm leading-relaxed">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-16 max-w-screen-2xl mx-auto">
         <div class="space-y-6">
-            <div class="text-lg font-bold text-[#6e5e00] font-headline">Guanyin Citta Dharma Door (NZ) Charitable Trust</div>
-            <p class="text-stone-500 max-w-xs">Dedicated to spreading the wisdom of Buddhism and the compassionate spirit of Guan Yin Bodhisattva for the benefit of all sentient beings.</p>
+            <div class="text-lg font-bold text-[#6e5e00] font-headline"><span class="lang-en">Guanyin Citta Dharma Door (NZ) Charitable Trust</span><span class="lang-zh">观音堂法门（新西兰）慈善信托</span></div>
+            <p class="text-stone-500 max-w-xs"><span class="lang-en">Dedicated to spreading the wisdom of Buddhism and the compassionate spirit of Guan Yin Bodhisattva for the benefit of all sentient beings.</span><span class="lang-zh">致力于弘扬佛教智慧与观世音菩萨慈悲精神，利益一切有情众生。</span></p>
             <div class="flex gap-4">
                 <a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#6e5e00] shadow-sm hover:scale-110 transition-transform cursor-pointer" href="https://www.facebook.com/guanyincitta.nz/" target="_blank" aria-label="Facebook">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -259,17 +268,17 @@
         </div>
         <div class="grid grid-cols-2 gap-8">
             <div>
-                <h4 class="font-bold text-[#6e5e00] mb-6">Explore</h4>
+                <h4 class="font-bold text-[#6e5e00] mb-6"><span class="lang-en">Explore</span><span class="lang-zh">导航</span></h4>
                 <ul class="space-y-4">
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="index.html">Home</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="about.html">About Us</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="events.html">Events</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="contact.html">Contact</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="donate.html">Donate</a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="donate.html"><span class="lang-en">Donate</span><span class="lang-zh">捐款</span></a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-[#6e5e00] mb-6">Contact</h4>
+                <h4 class="font-bold text-[#6e5e00] mb-6"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></h4>
                 <ul class="space-y-4">
                     <li class="text-stone-500">+64 9 525 0659</li>
                     <li class="text-stone-500">Unit C, 259 Great South Road, Greenlane, Auckland 1051</li>
@@ -278,16 +287,17 @@
             </div>
         </div>
         <div class="bg-white/50 p-8 rounded-3xl">
-            <h4 class="font-bold text-[#6e5e00] mb-4">Legal</h4>
+            <h4 class="font-bold text-[#6e5e00] mb-4"><span class="lang-en">Legal</span><span class="lang-zh">法律</span></h4>
             <ul class="space-y-3">
-                <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="legal.html">Legal Status</a></li>
+                <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="legal.html"><span class="lang-en">Legal Status</span><span class="lang-zh">法律状态</span></a></li>
             </ul>
         </div>
     </div>
     <div class="border-t border-stone-200 py-8 text-center text-stone-400">
-        <p>Copyright &copy; 2025 by Guanyincitta.org.nz. All rights reserved.</p>
+        <p><span class="lang-en">Copyright &copy; 2025 by Guanyincitta.org.nz. All rights reserved.</span><span class="lang-zh">版权所有 &copy; 2025 Guanyincitta.org.nz。保留所有权利。</span></p>
     </div>
 </footer>
 
+<script src="js/lang.js"></script>
 </body>
 </html>

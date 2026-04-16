@@ -56,7 +56,12 @@
     <style>
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         .editorial-shadow { box-shadow: 0 24px 48px -12px rgba(28, 27, 27, 0.06); }
+        /* Language switcher */
+        .lang-zh { display: none; }
+        .zh-active .lang-en { display: none; }
+        .zh-active .lang-zh { display: inline; }
     </style>
+    <script>(function(){try{if(localStorage.getItem('guanyin-lang')==='zh')document.documentElement.classList.add('zh-active');}catch(e){}})()</script>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
 
@@ -65,38 +70,42 @@
     <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
         <a href="index.html" class="flex items-center gap-3 cursor-pointer">
             <img src="images/guanyin-logo.png" alt="Guan Yin Citta Logo" class="h-10 w-10 object-contain"/>
-            <span class="text-2xl font-bold tracking-tight text-[#6e5e00] font-headline">Guan Yin Citta NZ</span>
+            <span class="text-2xl font-bold tracking-tight text-[#6e5e00] font-headline"><span class="lang-en">Guan Yin Citta NZ</span><span class="lang-zh">观音堂 新西兰</span></span>
         </a>
         <div class="hidden md:flex items-center gap-8">
-            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="index.html">Home</a>
-            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="about.html">About Us</a>
-            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="events.html">Events</a>
-            <a class="font-headline font-bold tracking-tight text-[#6e5e00] border-b-2 border-[#f0d13c] pb-1 transition-all duration-300 cursor-pointer" href="contact.html">Contact</a>
+            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a>
+            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a>
+            <a class="font-headline font-bold tracking-tight text-[#6e5e00] border-b-2 border-[#f0d13c] pb-1 transition-all duration-300 cursor-pointer" href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a>
         </div>
         <div class="flex items-center gap-4">
-            <a href="donate.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-all active:scale-95 cursor-pointer">Donate</a>
+            <div class="flex items-center bg-surface-container rounded-lg p-1">
+                <button id="lang-btn-en" onclick="switchLang('en')" class="px-3 py-1 rounded-md text-sm font-bold transition-all cursor-pointer">EN</button>
+                <button id="lang-btn-zh" onclick="switchLang('zh')" class="px-3 py-1 rounded-md text-sm font-bold transition-all cursor-pointer">中文</button>
+            </div>
+            <a href="donate.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-all active:scale-95 cursor-pointer"><span class="lang-en">Donate</span><span class="lang-zh">捐款</span></a>
             <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden px-8 pb-4 space-y-3">
-        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="index.html">Home</a>
-        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="about.html">About Us</a>
-        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="events.html">Events</a>
-        <a class="block font-headline font-bold text-[#6e5e00] py-2 cursor-pointer" href="contact.html">Contact</a>
+        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a>
+        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a>
+        <a class="block font-headline font-bold text-[#6e5e00] py-2 cursor-pointer" href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a>
     </div>
 </nav>
 
 <main class="pt-32 pb-24">
     <!-- Header -->
     <div class="max-w-7xl mx-auto px-8 mb-16 text-center">
-        <span class="label-md uppercase tracking-[0.2em] text-primary font-label font-semibold">Get In Touch</span>
+        <span class="label-md uppercase tracking-[0.2em] text-primary font-label font-semibold"><span class="lang-en">Contact Us</span><span class="lang-zh">联系我们</span></span>
         <h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-on-surface mt-4 mb-8">
-            Contact <span class="text-primary italic">Us</span>
+            <span class="lang-en">Get In <span class="text-primary italic">Touch</span></span><span class="lang-zh">与我们<span class="text-primary italic">取得联系</span></span>
         </h1>
         <p class="text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-            We welcome you to visit our practice center, join our events, or reach out with any questions. All are welcome!
+            <span class="lang-en">We'd love to connect with you. Whether you have questions about our practice, upcoming events, or how to get involved — our doors are always open.</span><span class="lang-zh">我们期待与您联系。无论您对我们的修行、近期活动或参与方式有任何疑问，我们的大门随时为您敞开。</span>
         </p>
     </div>
 
@@ -106,7 +115,7 @@
             <!-- Contact Information -->
             <div class="space-y-10">
                 <div>
-                    <h2 class="text-3xl font-headline font-bold text-on-surface mb-8">Contact Information</h2>
+                    <h2 class="text-3xl font-headline font-bold text-on-surface mb-8"><span class="lang-en">Contact Information</span><span class="lang-zh">联系信息</span></h2>
                     <div class="space-y-6">
                         <!-- Address -->
                         <div class="flex items-start gap-4">
@@ -114,8 +123,19 @@
                                 <span class="material-symbols-outlined text-on-primary-container">location_on</span>
                             </div>
                             <div>
-                                <h3 class="font-bold text-on-surface mb-1">Address</h3>
+                                <h3 class="font-bold text-on-surface mb-1"><span class="lang-en">Visit Us</span><span class="lang-zh">拜访我们</span></h3>
                                 <p class="text-on-surface-variant">Unit C, 259 Great South Road,<br/>Greenlane, Auckland 1051<br/>New Zealand</p>
+                            </div>
+                        </div>
+                        <!-- Opening Hours -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-on-primary-container">schedule</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-on-surface mb-1"><span class="lang-en">Opening Hours</span><span class="lang-zh">开放时间</span></h3>
+                                <p class="text-on-surface-variant"><span class="lang-en">Mon – Fri: 9:00 AM – 9:00 PM</span><span class="lang-zh">周一至周五：上午9:00 – 晚上9:00</span></p>
+                                <p class="text-on-surface-variant"><span class="lang-en">Sat – Sun: 9:00 AM – 9:00 PM</span><span class="lang-zh">周六至周日：上午9:00 – 晚上9:00</span></p>
                             </div>
                         </div>
                         <!-- Phone -->
@@ -124,7 +144,7 @@
                                 <span class="material-symbols-outlined text-on-primary-container">phone</span>
                             </div>
                             <div>
-                                <h3 class="font-bold text-on-surface mb-1">Phone</h3>
+                                <h3 class="font-bold text-on-surface mb-1"><span class="lang-en">Call Us</span><span class="lang-zh">致电我们</span></h3>
                                 <p class="text-on-surface-variant">+64 9 525 0659</p>
                             </div>
                         </div>
@@ -134,7 +154,7 @@
                                 <span class="material-symbols-outlined text-on-primary-container">mail</span>
                             </div>
                             <div>
-                                <h3 class="font-bold text-on-surface mb-1">Email</h3>
+                                <h3 class="font-bold text-on-surface mb-1"><span class="lang-en">Email Us</span><span class="lang-zh">发送邮件</span></h3>
                                 <a class="text-primary hover:underline cursor-pointer" href="mailto:guanyincitta.nz@gmail.com">guanyincitta.nz@gmail.com</a>
                             </div>
                         </div>
@@ -143,7 +163,7 @@
 
                 <!-- Social Media -->
                 <div>
-                    <h3 class="font-bold text-on-surface mb-4">Follow Us</h3>
+                    <h3 class="font-bold text-on-surface mb-4"><span class="lang-en">Follow Us</span><span class="lang-zh">关注我们</span></h3>
                     <div class="flex gap-4">
                         <a class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-[#6e5e00] hover:bg-primary-container transition-colors cursor-pointer" href="https://www.facebook.com/guanyincitta.nz/" target="_blank" aria-label="Facebook">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -158,24 +178,29 @@
                 </div>
 
                 <!-- Google Map -->
-                <div class="rounded-2xl overflow-hidden editorial-shadow h-[300px]">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3188.4!2d174.7977528!3d-36.8912455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d49a5f0a3c8ed%3A0x1!2sc%2F259%20Great%20South%20Road%2C%20Greenlane%2C%20Auckland%201051!5e0!3m2!1sen!2snz!4v1"
-                        width="100%"
-                        height="100%"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Guan Yin Citta Practice Center Location">
-                    </iframe>
+                <div>
+                    <h3 class="font-bold text-on-surface mb-2"><span class="lang-en">Find Us</span><span class="lang-zh">找到我们</span></h3>
+                    <p class="text-on-surface-variant text-sm mb-4"><span class="lang-en">Located in Greenlane, Auckland — easily accessible by public transport.</span><span class="lang-zh">位于奥克兰格林莲，公共交通便利。</span></p>
+                    <div class="rounded-2xl overflow-hidden editorial-shadow h-[300px]">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3188.4!2d174.7977528!3d-36.8912455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d49a5f0a3c8ed%3A0x1!2sc%2F259%20Great%20South%20Road%2C%20Greenlane%2C%20Auckland%201051!5e0!3m2!1sen!2snz!4v1"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Guan Yin Citta Practice Center Location">
+                        </iframe>
+                    </div>
+                    <p class="font-semibold text-on-surface mt-3"><span class="lang-en">Guan Yin Citta Practice Center Auckland</span><span class="lang-zh">观音堂修行中心 奥克兰</span></p>
                 </div>
             </div>
 
             <!-- Contact Form -->
             <div class="bg-surface-container-low rounded-[2rem] p-10 editorial-shadow">
-                <h2 class="text-3xl font-headline font-bold text-on-surface mb-2">Send Us a Message</h2>
-                <p class="text-on-surface-variant mb-8">We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
+                <h2 class="text-3xl font-headline font-bold text-on-surface mb-2"><span class="lang-en">Send Us a Message</span><span class="lang-zh">给我们留言</span></h2>
+                <p class="text-on-surface-variant mb-8"><span class="lang-en">We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</span><span class="lang-zh">很高兴收到您的来信。请填写以下表单，我们将尽快回复您。</span></p>
                 <form id="contactForm" class="space-y-6">
                     <input type="hidden" name="access_key" value="58b8dde3-7d6e-4605-8f78-f55f9274b4e5" />
                     <input type="hidden" name="subject" value="New Contact Form Submission – Guan Yin Citta" />
@@ -185,7 +210,7 @@
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-semibold text-on-surface mb-2" for="firstName">First Name</label>
+                            <label class="block text-sm font-semibold text-on-surface mb-2" for="firstName"><span class="lang-en">First Name</span><span class="lang-zh">名字</span></label>
                             <input
                                 type="text"
                                 id="firstName"
@@ -195,7 +220,7 @@
                             />
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-on-surface mb-2" for="lastName">Last Name</label>
+                            <label class="block text-sm font-semibold text-on-surface mb-2" for="lastName"><span class="lang-en">Last Name</span><span class="lang-zh">姓氏</span></label>
                             <input
                                 type="text"
                                 id="lastName"
@@ -206,7 +231,7 @@
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold text-on-surface mb-2" for="email">Email <span class="text-error">*</span></label>
+                        <label class="block text-sm font-semibold text-on-surface mb-2" for="email"><span class="lang-en">Email</span><span class="lang-zh">电子邮件</span> <span class="text-error">*</span></label>
                         <input
                             type="email"
                             id="email"
@@ -217,7 +242,7 @@
                         />
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold text-on-surface mb-2" for="message">Message</label>
+                        <label class="block text-sm font-semibold text-on-surface mb-2" for="message"><span class="lang-en">Message</span><span class="lang-zh">留言内容</span></label>
                         <textarea
                             id="message"
                             name="message"
@@ -229,10 +254,10 @@
 
                     <!-- Status messages -->
                     <div id="formSuccess" class="hidden rounded-xl px-5 py-4 bg-green-50 border border-green-200 text-green-800 text-sm font-medium">
-                        Thank you for your message! We'll get back to you as soon as possible.
+                        <span class="lang-en">Thank you for your message! We'll get back to you as soon as possible.</span><span class="lang-zh">感谢您的留言！我们将尽快回复您。</span>
                     </div>
                     <div id="formError" class="hidden rounded-xl px-5 py-4 bg-red-50 border border-red-200 text-red-800 text-sm font-medium">
-                        Something went wrong. Please try again or email us directly.
+                        <span class="lang-en">Something went wrong. Please try again or email us directly.</span><span class="lang-zh">发送失败，请重试或直接发送电子邮件给我们。</span>
                     </div>
 
                     <button
@@ -240,7 +265,7 @@
                         id="submitBtn"
                         class="w-full bg-primary text-on-primary px-8 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all active:scale-[0.98] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                        Send Message
+                        <span class="lang-en">Send Message</span><span class="lang-zh">发送留言</span>
                     </button>
                 </form>
 
@@ -285,16 +310,16 @@
     <!-- Volunteer CTA -->
     <section class="max-w-7xl mx-auto px-8 mt-24">
         <div class="bg-primary-container/10 rounded-3xl p-12 md:p-16 border border-primary-container/20 text-center">
-            <h2 class="text-4xl font-headline font-extrabold mb-4 tracking-tight">Join Us as a Volunteer!</h2>
+            <h2 class="text-4xl font-headline font-extrabold mb-4 tracking-tight"><span class="lang-en">Join Us as a Volunteer!</span><span class="lang-zh">加入我们成为义工！</span></h2>
             <p class="text-lg text-on-surface-variant mb-8 max-w-2xl mx-auto leading-relaxed">
-                Would you like to contribute your time and compassion to support our activities? We welcome kind-hearted individuals to join our volunteer team and make a positive difference together. No matter your background or experience, your help is always appreciated. Come be a part of our meaningful journey.
+                <span class="lang-en">Would you like to contribute your time and compassion to support our activities? We welcome kind-hearted individuals to join our volunteer team and make a positive difference together. No matter your background or experience, your help is always appreciated. Come be a part of our meaningful journey.</span><span class="lang-zh">您是否愿意贡献时间与爱心，支持我们的活动？我们诚挚欢迎善心人士加入义工团队，共同创造积极影响。无论您的背景或经验如何，您的帮助都是我们所珍视的。让我们携手踏上这段充满意义的旅程。</span>
             </p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
                 <a href="contact.html" class="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold text-lg transition-all hover:scale-105 editorial-shadow cursor-pointer inline-block">
-                    Volunteer With Us
+                    <span class="lang-en">Volunteer With Us</span><span class="lang-zh">加入我们的义工团队</span>
                 </a>
                 <a href="donate.html" class="bg-white text-primary border-2 border-primary px-10 py-4 rounded-lg font-bold text-lg transition-all hover:bg-primary-container/20 cursor-pointer inline-block">
-                    Donate
+                    <span class="lang-en">Donate</span><span class="lang-zh">捐款</span>
                 </a>
             </div>
         </div>
@@ -305,8 +330,8 @@
 <footer class="bg-[#f6f3f2] font-body text-sm leading-relaxed mt-24">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-16 max-w-screen-2xl mx-auto">
         <div class="space-y-6">
-            <div class="text-lg font-bold text-[#6e5e00] font-headline">Guanyin Citta Dharma Door (NZ) Charitable Trust</div>
-            <p class="text-stone-500 max-w-xs">Dedicated to spreading the wisdom of Buddhism and the compassionate spirit of Guan Yin Bodhisattva for the benefit of all sentient beings.</p>
+            <div class="text-lg font-bold text-[#6e5e00] font-headline"><span class="lang-en">Guanyin Citta Dharma Door (NZ) Charitable Trust</span><span class="lang-zh">观音堂法门（新西兰）慈善信托</span></div>
+            <p class="text-stone-500 max-w-xs"><span class="lang-en">Dedicated to spreading the wisdom of Buddhism and the compassionate spirit of Guan Yin Bodhisattva for the benefit of all sentient beings.</span><span class="lang-zh">致力于弘扬佛教智慧与观世音菩萨慈悲精神，利益一切有情众生。</span></p>
             <div class="flex gap-4">
                 <a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#6e5e00] shadow-sm hover:scale-110 transition-transform cursor-pointer" href="https://www.facebook.com/guanyincitta.nz/" target="_blank" aria-label="Facebook">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -321,17 +346,17 @@
         </div>
         <div class="grid grid-cols-2 gap-8">
             <div>
-                <h4 class="font-bold text-[#6e5e00] mb-6">Explore</h4>
+                <h4 class="font-bold text-[#6e5e00] mb-6"><span class="lang-en">Explore</span><span class="lang-zh">导航</span></h4>
                 <ul class="space-y-4">
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="index.html">Home</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="about.html">About Us</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="events.html">Events</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="contact.html">Contact</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="donate.html">Donate</a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="donate.html"><span class="lang-en">Donate</span><span class="lang-zh">捐款</span></a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-[#6e5e00] mb-6">Contact</h4>
+                <h4 class="font-bold text-[#6e5e00] mb-6"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></h4>
                 <ul class="space-y-4">
                     <li class="text-stone-500">+64 9 525 0659</li>
                     <li class="text-stone-500">Unit C, 259 Great South Road, Greenlane, Auckland 1051</li>
@@ -340,16 +365,17 @@
             </div>
         </div>
         <div class="bg-white/50 p-8 rounded-3xl">
-            <h4 class="font-bold text-[#6e5e00] mb-4">Legal</h4>
+            <h4 class="font-bold text-[#6e5e00] mb-4"><span class="lang-en">Legal</span><span class="lang-zh">法律</span></h4>
             <ul class="space-y-3">
-                <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="legal.html">Legal Status</a></li>
+                <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="legal.html"><span class="lang-en">Legal Status</span><span class="lang-zh">法律状态</span></a></li>
             </ul>
         </div>
     </div>
     <div class="border-t border-stone-200 py-8 text-center text-stone-400">
-        <p>Copyright &copy; 2025 by Guanyincitta.org.nz. All rights reserved.</p>
+        <p><span class="lang-en">Copyright &copy; 2025 by Guanyincitta.org.nz. All rights reserved.</span><span class="lang-zh">版权所有 &copy; 2025 Guanyincitta.org.nz。保留所有权利。</span></p>
     </div>
 </footer>
 
+<script src="js/lang.js"></script>
 </body>
 </html>

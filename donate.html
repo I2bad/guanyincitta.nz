@@ -57,7 +57,12 @@
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         .editorial-shadow { box-shadow: 0 24px 48px -12px rgba(28, 27, 27, 0.06); }
         .shimmer-gradient { background: linear-gradient(135deg, #6e5e00 0%, #f0d13c 100%); }
+        /* Language switcher */
+        .lang-zh { display: none; }
+        .zh-active .lang-en { display: none; }
+        .zh-active .lang-zh { display: inline; }
     </style>
+    <script>(function(){try{if(localStorage.getItem('guanyin-lang')==='zh')document.documentElement.classList.add('zh-active');}catch(e){}})()</script>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
 
@@ -66,38 +71,42 @@
     <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
         <a href="index.html" class="flex items-center gap-3 cursor-pointer">
             <img src="images/guanyin-logo.png" alt="Guan Yin Citta Logo" class="h-10 w-10 object-contain"/>
-            <span class="text-2xl font-bold tracking-tight text-[#6e5e00] font-headline">Guan Yin Citta NZ</span>
+            <span class="text-2xl font-bold tracking-tight text-[#6e5e00] font-headline"><span class="lang-en">Guan Yin Citta NZ</span><span class="lang-zh">观音堂 新西兰</span></span>
         </a>
         <div class="hidden md:flex items-center gap-8">
-            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="index.html">Home</a>
-            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="about.html">About Us</a>
-            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="events.html">Events</a>
-            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="contact.html">Contact</a>
+            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a>
+            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a>
+            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a>
         </div>
         <div class="flex items-center gap-4">
-            <a href="donate.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-all active:scale-95 cursor-pointer">Donate</a>
+            <div class="flex items-center bg-surface-container rounded-lg p-1">
+                <button id="lang-btn-en" onclick="switchLang('en')" class="px-3 py-1 rounded-md text-sm font-bold transition-all cursor-pointer">EN</button>
+                <button id="lang-btn-zh" onclick="switchLang('zh')" class="px-3 py-1 rounded-md text-sm font-bold transition-all cursor-pointer">中文</button>
+            </div>
+            <a href="donate.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-all active:scale-95 cursor-pointer"><span class="lang-en">Donate</span><span class="lang-zh">捐款</span></a>
             <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden px-8 pb-4 space-y-3">
-        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="index.html">Home</a>
-        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="about.html">About Us</a>
-        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="events.html">Events</a>
-        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="contact.html">Contact</a>
+        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a>
+        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a>
+        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a>
     </div>
 </nav>
 
 <main class="pt-32 pb-24">
     <!-- Header -->
     <div class="max-w-7xl mx-auto px-8 mb-16 text-center">
-        <span class="label-md uppercase tracking-[0.2em] text-primary font-label font-semibold">Support Our Mission</span>
+        <span class="label-md uppercase tracking-[0.2em] text-primary font-label font-semibold"><span class="lang-en">Support Our Mission</span><span class="lang-zh">支持我们的使命</span></span>
         <h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-on-surface mt-4 mb-8">
-            Support <span class="text-primary italic">Our Work</span>
+            <span class="lang-en">Support <span class="text-primary italic">Our Work</span></span><span class="lang-zh">支持 <span class="text-primary italic">我们的工作</span></span>
         </h1>
         <p class="text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-            Your kind donation helps us continue our spiritual activities, Dharma sharing, and community support. Every contribution, big or small, makes a difference in spreading compassion and wisdom.
+            <span class="lang-en">Your kind donation helps us continue our spiritual activities, Dharma sharing, and community support. Every contribution, big or small, makes a difference in spreading compassion and wisdom.</span><span class="lang-zh">您的慷慨捐助帮助我们延续修行活动、弘扬佛法、支持社区。无论捐款多少，每一份爱心都能播撒慈悲与智慧的种子。</span>
         </p>
     </div>
 
@@ -108,15 +117,15 @@
             <!-- Why Donate / Impact -->
             <div class="space-y-8">
                 <div>
-                    <h2 class="text-3xl font-headline font-bold text-on-surface mb-8">Your Donation Supports</h2>
+                    <h2 class="text-3xl font-headline font-bold text-on-surface mb-8"><span class="lang-en">Your Donation Supports</span><span class="lang-zh">您的捐款支持</span></h2>
                     <div class="space-y-5">
                         <div class="flex items-start gap-4">
                             <div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
                                 <span class="material-symbols-outlined text-on-primary-container">auto_stories</span>
                             </div>
                             <div>
-                                <h3 class="font-bold text-on-surface mb-1">Dharma Activities</h3>
-                                <p class="text-on-surface-variant">Sutra recitation sessions, Buddhist study classes, and regular spiritual programs across Auckland.</p>
+                                <h3 class="font-bold text-on-surface mb-1"><span class="lang-en">Dharma Activities</span><span class="lang-zh">法务活动</span></h3>
+                                <p class="text-on-surface-variant"><span class="lang-en">Sutra recitation sessions, Buddhist study classes, and regular spiritual programs across Auckland.</span><span class="lang-zh">诵经活动、学佛班及奥克兰各地定期举办的修行项目。</span></p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -124,8 +133,8 @@
                                 <span class="material-symbols-outlined text-on-primary-container">groups</span>
                             </div>
                             <div>
-                                <h3 class="font-bold text-on-surface mb-1">Community Programs</h3>
-                                <p class="text-on-surface-variant">Health and wellness talks, the annual Vegetarian Carnival, and Chinese language classes for children.</p>
+                                <h3 class="font-bold text-on-surface mb-1"><span class="lang-en">Community Programs</span><span class="lang-zh">社区项目</span></h3>
+                                <p class="text-on-surface-variant"><span class="lang-en">Health and wellness talks, the annual Vegetarian Carnival, and Chinese language classes for children.</span><span class="lang-zh">健康讲座、年度素食嘉年华及儿童中文课程。</span></p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -133,8 +142,8 @@
                                 <span class="material-symbols-outlined text-on-primary-container">set_meal</span>
                             </div>
                             <div>
-                                <h3 class="font-bold text-on-surface mb-1">Life Liberation Ceremonies</h3>
-                                <p class="text-on-surface-variant">Practicing great compassion through life liberation (fangsheng), helping all sentient beings.</p>
+                                <h3 class="font-bold text-on-surface mb-1"><span class="lang-en">Life Liberation Ceremonies</span><span class="lang-zh">放生法会</span></h3>
+                                <p class="text-on-surface-variant"><span class="lang-en">Practicing great compassion through life liberation (fangsheng), helping all sentient beings.</span><span class="lang-zh">以放生（放生法）践行大悲心，利益一切有情众生。</span></p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -142,8 +151,8 @@
                                 <span class="material-symbols-outlined text-on-primary-container">volunteer_activism</span>
                             </div>
                             <div>
-                                <h3 class="font-bold text-on-surface mb-1">Cultural Preservation</h3>
-                                <p class="text-on-surface-variant">Promoting vegetarianism, environmental awareness, and preserving Buddhist cultural heritage in New Zealand.</p>
+                                <h3 class="font-bold text-on-surface mb-1"><span class="lang-en">Cultural Preservation</span><span class="lang-zh">文化传承</span></h3>
+                                <p class="text-on-surface-variant"><span class="lang-en">Promoting vegetarianism, environmental awareness, and preserving Buddhist cultural heritage in New Zealand.</span><span class="lang-zh">推广素食主义与环保意识，传承新西兰的佛教文化遗产。</span></p>
                             </div>
                         </div>
                     </div>
@@ -156,16 +165,16 @@
 
                 <!-- Quote -->
                 <div class="bg-primary-container/10 border border-primary-container/20 rounded-2xl p-8">
-                    <p class="text-lg italic text-on-surface leading-relaxed mb-4">"Your contributions help us print free Buddhist scriptures, maintain our centers, and provide relief to those in need. Every act of generosity sows the seeds of future blessings."</p>
-                    <p class="text-sm font-bold text-primary">-- Guan Yin Citta NZ Charitable Trust</p>
+                    <p class="text-lg italic text-on-surface leading-relaxed mb-4">"<span class="lang-en">Your contributions help us print free Buddhist scriptures, maintain our centers, and provide relief to those in need. Every act of generosity sows the seeds of future blessings.</span><span class="lang-zh">您的捐助帮助我们免费印刷佛经、维护修行中心，以及为有需要的人提供援助。每一份慷慨之举，都是未来福报的种子。</span>"</p>
+                    <p class="text-sm font-bold text-primary"><span class="lang-en">-- Guan Yin Citta NZ Charitable Trust</span><span class="lang-zh">—— 观音堂（新西兰）慈善信托</span></p>
                 </div>
             </div>
 
             <!-- Bank Transfer Details -->
             <div class="space-y-6">
                 <div class="bg-surface-container-low rounded-[2rem] p-10 editorial-shadow">
-                    <h2 class="text-3xl font-headline font-bold text-on-surface mb-2">How to Donate</h2>
-                    <p class="text-on-surface-variant mb-8">All donations are greatly appreciated. Please use the bank transfer details below, or contact us directly for other payment arrangements.</p>
+                    <h2 class="text-3xl font-headline font-bold text-on-surface mb-2"><span class="lang-en">How to Donate</span><span class="lang-zh">如何捐款</span></h2>
+                    <p class="text-on-surface-variant mb-8"><span class="lang-en">All donations are greatly appreciated. Please use the bank transfer details below, or contact us directly for other payment arrangements.</span><span class="lang-zh">衷心感谢您的每一份捐助。请使用以下银行转账信息，或直接联系我们了解其他付款方式。</span></p>
 
                     <!-- Bank Transfer -->
                     <div class="bg-surface-container-lowest rounded-2xl p-8 mb-6 border border-outline-variant/20">
@@ -173,24 +182,24 @@
                             <div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center">
                                 <span class="material-symbols-outlined text-on-primary-container text-xl">account_balance</span>
                             </div>
-                            <h3 class="text-xl font-headline font-bold text-on-surface">Bank Transfer</h3>
+                            <h3 class="text-xl font-headline font-bold text-on-surface"><span class="lang-en">Bank Transfer</span><span class="lang-zh">银行转账</span></h3>
                         </div>
                         <div class="space-y-4">
                             <div class="flex justify-between items-center py-3 border-b border-outline-variant/20">
-                                <span class="text-sm font-semibold text-on-surface-variant uppercase tracking-wide">Account Name</span>
+                                <span class="text-sm font-semibold text-on-surface-variant uppercase tracking-wide"><span class="lang-en">Account Name</span><span class="lang-zh">账户名称</span></span>
                                 <span class="font-bold text-on-surface">Guanyin Citta Dharma Door (NZ) Charitable Trust</span>
                             </div>
                             <div class="flex justify-between items-center py-3 border-b border-outline-variant/20">
-                                <span class="text-sm font-semibold text-on-surface-variant uppercase tracking-wide">Bank</span>
-                                <span class="font-bold text-on-surface">To be added</span>
+                                <span class="text-sm font-semibold text-on-surface-variant uppercase tracking-wide"><span class="lang-en">Bank</span><span class="lang-zh">银行</span></span>
+                                <span class="font-bold text-on-surface"><span class="lang-en">To be added</span><span class="lang-zh">待添加</span></span>
                             </div>
                             <div class="flex justify-between items-center py-3 border-b border-outline-variant/20">
-                                <span class="text-sm font-semibold text-on-surface-variant uppercase tracking-wide">Account Number</span>
-                                <span class="font-bold text-on-surface">To be added</span>
+                                <span class="text-sm font-semibold text-on-surface-variant uppercase tracking-wide"><span class="lang-en">Account Number</span><span class="lang-zh">账号</span></span>
+                                <span class="font-bold text-on-surface"><span class="lang-en">To be added</span><span class="lang-zh">待添加</span></span>
                             </div>
                             <div class="flex justify-between items-center py-3">
-                                <span class="text-sm font-semibold text-on-surface-variant uppercase tracking-wide">Reference</span>
-                                <span class="font-bold text-on-surface">Donation</span>
+                                <span class="text-sm font-semibold text-on-surface-variant uppercase tracking-wide"><span class="lang-en">Reference</span><span class="lang-zh">用途备注</span></span>
+                                <span class="font-bold text-on-surface"><span class="lang-en">Donation</span><span class="lang-zh">捐款</span></span>
                             </div>
                         </div>
                     </div>
@@ -198,12 +207,12 @@
                     <!-- Tax Receipt Note -->
                     <div class="flex items-start gap-3 bg-secondary/5 border border-secondary/15 rounded-xl p-4 mb-8">
                         <span class="material-symbols-outlined text-secondary mt-0.5">info</span>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">As a registered New Zealand charitable trust, donations may be eligible for a tax credit. Please contact us for a receipt after your donation.</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed"><span class="lang-en">As a registered New Zealand charitable trust, donations may be eligible for a tax credit. Please contact us for a receipt after your donation.</span><span class="lang-zh">作为新西兰注册慈善信托，您的捐款可能符合税收抵免资格。捐款后请联系我们索取收据。</span></p>
                     </div>
 
                     <!-- Contact for donation enquiry -->
                     <div class="space-y-4">
-                        <h3 class="font-headline font-bold text-on-surface">Donation Enquiries</h3>
+                        <h3 class="font-headline font-bold text-on-surface"><span class="lang-en">Donation Enquiries</span><span class="lang-zh">捐款咨询</span></h3>
                         <div class="flex items-center gap-3 text-on-surface-variant">
                             <span class="material-symbols-outlined text-primary">mail</span>
                             <a href="mailto:guanyincitta.nz@gmail.com" class="hover:text-primary transition-colors cursor-pointer">guanyincitta.nz@gmail.com</a>
@@ -217,10 +226,10 @@
 
                 <!-- Volunteer CTA -->
                 <div class="bg-on-surface text-white rounded-[2rem] p-10">
-                    <h3 class="text-2xl font-headline font-bold mb-3">Can't donate right now?</h3>
-                    <p class="text-white/70 mb-6 leading-relaxed">You can still make a difference by volunteering your time and compassion. We welcome kind-hearted individuals to join our team.</p>
+                    <h3 class="text-2xl font-headline font-bold mb-3"><span class="lang-en">Can't donate right now?</span><span class="lang-zh">暂时无法捐款？</span></h3>
+                    <p class="text-white/70 mb-6 leading-relaxed"><span class="lang-en">You can still make a difference by volunteering your time and compassion. We welcome kind-hearted individuals to join our team.</span><span class="lang-zh">您仍然可以通过贡献时间与爱心来产生影响。我们欢迎善心人士加入我们的团队。</span></p>
                     <a href="contact.html" class="inline-block bg-primary-container text-on-primary-container px-8 py-3 rounded-xl font-bold hover:opacity-90 transition-all active:scale-95 cursor-pointer">
-                        Volunteer With Us
+                        <span class="lang-en">Volunteer With Us</span><span class="lang-zh">加入我们的义工团队</span>
                     </a>
                 </div>
             </div>
@@ -232,19 +241,19 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div class="bg-surface-container-low rounded-2xl p-8 text-center editorial-shadow">
                 <p class="text-4xl font-headline font-extrabold text-primary mb-2">$2M</p>
-                <p class="text-on-surface-variant text-sm font-medium">Raised Through Campaigns</p>
+                <p class="text-on-surface-variant text-sm font-medium"><span class="lang-en">Raised Through Campaigns</span><span class="lang-zh">活动筹款总额</span></p>
             </div>
             <div class="bg-surface-container-low rounded-2xl p-8 text-center editorial-shadow">
                 <p class="text-4xl font-headline font-extrabold text-primary mb-2">10M+</p>
-                <p class="text-on-surface-variant text-sm font-medium">Followers Worldwide</p>
+                <p class="text-on-surface-variant text-sm font-medium"><span class="lang-en">Followers Worldwide</span><span class="lang-zh">全球追随者</span></p>
             </div>
             <div class="bg-surface-container-low rounded-2xl p-8 text-center editorial-shadow">
                 <p class="text-4xl font-headline font-extrabold text-primary mb-2">50+</p>
-                <p class="text-on-surface-variant text-sm font-medium">Countries &amp; Regions</p>
+                <p class="text-on-surface-variant text-sm font-medium"><span class="lang-en">Countries &amp; Regions</span><span class="lang-zh">国家与地区</span></p>
             </div>
             <div class="bg-surface-container-low rounded-2xl p-8 text-center editorial-shadow">
                 <p class="text-4xl font-headline font-extrabold text-primary mb-2">5,000</p>
-                <p class="text-on-surface-variant text-sm font-medium">Volunteers Across the World</p>
+                <p class="text-on-surface-variant text-sm font-medium"><span class="lang-en">Volunteers Across the World</span><span class="lang-zh">全球义工人数</span></p>
             </div>
         </div>
     </section>
@@ -254,8 +263,8 @@
 <footer class="bg-[#f6f3f2] font-body text-sm leading-relaxed mt-24">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-16 max-w-screen-2xl mx-auto">
         <div class="space-y-6">
-            <div class="text-lg font-bold text-[#6e5e00] font-headline">Guanyin Citta Dharma Door (NZ) Charitable Trust</div>
-            <p class="text-stone-500 max-w-xs">Dedicated to spreading the wisdom of Buddhism and the compassionate spirit of Guan Yin Bodhisattva for the benefit of all sentient beings.</p>
+            <div class="text-lg font-bold text-[#6e5e00] font-headline"><span class="lang-en">Guanyin Citta Dharma Door (NZ) Charitable Trust</span><span class="lang-zh">观音堂法门（新西兰）慈善信托</span></div>
+            <p class="text-stone-500 max-w-xs"><span class="lang-en">Dedicated to spreading the wisdom of Buddhism and the compassionate spirit of Guan Yin Bodhisattva for the benefit of all sentient beings.</span><span class="lang-zh">致力于弘扬佛教智慧与观世音菩萨慈悲精神，利益一切有情众生。</span></p>
             <div class="flex gap-4">
                 <a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#6e5e00] shadow-sm hover:scale-110 transition-transform cursor-pointer" href="https://www.facebook.com/guanyincitta.nz/" target="_blank" aria-label="Facebook">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -270,17 +279,17 @@
         </div>
         <div class="grid grid-cols-2 gap-8">
             <div>
-                <h4 class="font-bold text-[#6e5e00] mb-6">Explore</h4>
+                <h4 class="font-bold text-[#6e5e00] mb-6"><span class="lang-en">Explore</span><span class="lang-zh">导航</span></h4>
                 <ul class="space-y-4">
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="index.html">Home</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="about.html">About Us</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="events.html">Events</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="contact.html">Contact</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="donate.html">Donate</a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="donate.html"><span class="lang-en">Donate</span><span class="lang-zh">捐款</span></a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-[#6e5e00] mb-6">Contact</h4>
+                <h4 class="font-bold text-[#6e5e00] mb-6"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></h4>
                 <ul class="space-y-4">
                     <li class="text-stone-500">+64 9 525 0659</li>
                     <li class="text-stone-500">Unit C, 259 Great South Road, Greenlane, Auckland 1051</li>
@@ -289,16 +298,17 @@
             </div>
         </div>
         <div class="bg-white/50 p-8 rounded-3xl">
-            <h4 class="font-bold text-[#6e5e00] mb-4">Legal</h4>
+            <h4 class="font-bold text-[#6e5e00] mb-4"><span class="lang-en">Legal</span><span class="lang-zh">法律</span></h4>
             <ul class="space-y-3">
-                <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="legal.html">Legal Status</a></li>
+                <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="legal.html"><span class="lang-en">Legal Status</span><span class="lang-zh">法律状态</span></a></li>
             </ul>
         </div>
     </div>
     <div class="border-t border-stone-200 py-8 text-center text-stone-400">
-        <p>Copyright &copy; 2025 by Guanyincitta.org.nz. All rights reserved.</p>
+        <p><span class="lang-en">Copyright &copy; 2025 by Guanyincitta.org.nz. All rights reserved.</span><span class="lang-zh">版权所有 &copy; 2025 Guanyincitta.org.nz。保留所有权利。</span></p>
     </div>
 </footer>
 
+<script src="js/lang.js"></script>
 </body>
 </html>

@@ -56,7 +56,12 @@
     <style>
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         .editorial-shadow { box-shadow: 0 24px 48px -12px rgba(28, 27, 27, 0.06); }
+        /* Language switcher */
+        .lang-zh { display: none; }
+        .zh-active .lang-en { display: none; }
+        .zh-active .lang-zh { display: inline; }
     </style>
+    <script>(function(){try{if(localStorage.getItem('guanyin-lang')==='zh')document.documentElement.classList.add('zh-active');}catch(e){}})()</script>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
 
@@ -65,38 +70,42 @@
     <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
         <a href="index.html" class="flex items-center gap-3 cursor-pointer">
             <img src="images/guanyin-logo.png" alt="Guan Yin Citta Logo" class="h-10 w-10 object-contain"/>
-            <span class="text-2xl font-bold tracking-tight text-[#6e5e00] font-headline">Guan Yin Citta NZ</span>
+            <span class="text-2xl font-bold tracking-tight text-[#6e5e00] font-headline"><span class="lang-en">Guan Yin Citta NZ</span><span class="lang-zh">观音堂 新西兰</span></span>
         </a>
         <div class="hidden md:flex items-center gap-8">
-            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="index.html">Home</a>
-            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="about.html">About Us</a>
-            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="events.html">Events</a>
-            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="contact.html">Contact</a>
+            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a>
+            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a>
+            <a class="font-headline font-bold tracking-tight text-stone-600 hover:text-[#6e5e00] transition-all duration-300 cursor-pointer" href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a>
         </div>
         <div class="flex items-center gap-4">
-            <a href="donate.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-all active:scale-95 cursor-pointer">Donate</a>
+            <div class="flex items-center bg-surface-container rounded-lg p-1">
+                <button id="lang-btn-en" onclick="switchLang('en')" class="px-3 py-1 rounded-md text-sm font-bold transition-all cursor-pointer">EN</button>
+                <button id="lang-btn-zh" onclick="switchLang('zh')" class="px-3 py-1 rounded-md text-sm font-bold transition-all cursor-pointer">中文</button>
+            </div>
+            <a href="donate.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-all active:scale-95 cursor-pointer"><span class="lang-en">Donate</span><span class="lang-zh">捐款</span></a>
             <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden px-8 pb-4 space-y-3">
-        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="index.html">Home</a>
-        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="about.html">About Us</a>
-        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="events.html">Events</a>
-        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="contact.html">Contact</a>
+        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a>
+        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a>
+        <a class="block font-headline font-bold text-stone-600 py-2 cursor-pointer" href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a>
     </div>
 </nav>
 
 <main class="pt-32 pb-24">
     <!-- Header -->
     <div class="max-w-7xl mx-auto px-8 mb-16 text-center">
-        <span class="label-md uppercase tracking-[0.2em] text-primary font-label font-semibold">Transparency &amp; Accountability</span>
+        <span class="label-md uppercase tracking-[0.2em] text-primary font-label font-semibold"><span class="lang-en">Transparency &amp; Accountability</span><span class="lang-zh">透明度与问责制</span></span>
         <h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-on-surface mt-4 mb-8">
-            Legal <span class="text-primary italic">Status</span>
+            <span class="lang-en">Legal <span class="text-primary italic">Status</span></span><span class="lang-zh">法律 <span class="text-primary italic">状态</span></span>
         </h1>
         <p class="text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-            We are committed to operating in a transparent and compliant manner, and welcome public oversight and community support in all our charitable and cultural endeavors.
+            <span class="lang-en">We are committed to operating in a transparent and compliant manner, and welcome public oversight and community support in all our charitable and cultural endeavors.</span><span class="lang-zh">我们致力于以透明合规的方式运营，欢迎公众监督并期待社区对我们一切慈善与文化事业的支持。</span>
         </p>
     </div>
 
@@ -111,38 +120,31 @@
                         <div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
                             <span class="material-symbols-outlined text-on-primary-container">verified</span>
                         </div>
-                        <h2 class="text-2xl font-headline font-bold text-on-surface">Our Current Legal Status</h2>
+                        <h2 class="text-2xl font-headline font-bold text-on-surface"><span class="lang-en">Our Current Legal Status</span><span class="lang-zh">我们当前的法律状态</span></h2>
                     </div>
 
                     <p class="text-lg text-on-surface-variant leading-relaxed mb-10">
-                        Guan Yin Citta (NZ) Charitable Trust is legally registered as a charitable trust in New Zealand. Our official registration information is as follows:
+                        <span class="lang-en">Guan Yin Citta (NZ) Charitable Trust is legally registered as a charitable trust in New Zealand. Our official registration information is as follows:</span><span class="lang-zh">观音堂（新西兰）慈善信托已在新西兰合法注册为慈善信托。以下为我们的官方注册信息：</span>
                     </p>
 
                     <!-- Registration Details -->
                     <div class="space-y-0 rounded-2xl overflow-hidden border border-outline-variant/20">
                         <div class="flex flex-col sm:flex-row sm:items-center gap-2 px-6 py-5 bg-surface-container-lowest border-b border-outline-variant/20">
-                            <span class="text-sm font-bold text-on-surface-variant uppercase tracking-wide sm:w-52 shrink-0">Registering Authority</span>
-                            <span class="text-on-surface font-medium">New Zealand Charities Commission / Trusts Registry</span>
+                            <span class="text-sm font-bold text-on-surface-variant uppercase tracking-wide sm:w-52 shrink-0"><span class="lang-en">Registering Authority</span><span class="lang-zh">注册机构</span></span>
+                            <span class="text-on-surface font-medium"><span class="lang-en">New Zealand Charities Commission / Trusts Registry</span><span class="lang-zh">新西兰慈善委员会 / 信托注册处</span></span>
                         </div>
                         <div class="flex flex-col sm:flex-row sm:items-center gap-2 px-6 py-5 bg-surface-container-lowest border-b border-outline-variant/20">
-                            <span class="text-sm font-bold text-on-surface-variant uppercase tracking-wide sm:w-52 shrink-0">Registration Number</span>
-                            <span class="text-on-surface-variant italic">To be added</span>
+                            <span class="text-sm font-bold text-on-surface-variant uppercase tracking-wide sm:w-52 shrink-0"><span class="lang-en">Registration Number</span><span class="lang-zh">注册编号</span></span>
+                            <span class="text-on-surface font-semibold">CC51000</span>
                         </div>
                         <div class="flex flex-col sm:flex-row sm:items-center gap-2 px-6 py-5 bg-surface-container-lowest border-b border-outline-variant/20">
-                            <span class="text-sm font-bold text-on-surface-variant uppercase tracking-wide sm:w-52 shrink-0">Registration Date</span>
-                            <span class="text-on-surface-variant italic">To be added</span>
-                        </div>
-                        <div class="flex flex-col sm:flex-row sm:items-center gap-2 px-6 py-5 bg-surface-container-lowest">
-                            <span class="text-sm font-bold text-on-surface-variant uppercase tracking-wide sm:w-52 shrink-0">Document Download</span>
-                            <span class="text-on-surface-variant italic flex items-center gap-2">
-                                <span class="material-symbols-outlined text-base text-on-surface-variant/50">upload_file</span>
-                                PDF or image to be uploaded
-                            </span>
+                            <span class="text-sm font-bold text-on-surface-variant uppercase tracking-wide sm:w-52 shrink-0"><span class="lang-en">Registration Date</span><span class="lang-zh">注册日期</span></span>
+                            <span class="text-on-surface font-semibold"><span class="lang-en">4 August 2014</span><span class="lang-zh">2014年8月4日</span></span>
                         </div>
                     </div>
 
                     <p class="text-base text-on-surface-variant leading-relaxed mt-8">
-                        We are committed to operating in a transparent and compliant manner, and welcome public oversight and community support in all our charitable and cultural endeavors.
+                        <span class="lang-en">We are committed to operating in a transparent and compliant manner, and welcome public oversight and community support in all our charitable and cultural endeavors.</span><span class="lang-zh">我们致力于以透明合规的方式运营，欢迎公众监督并期待社区对我们一切慈善与文化事业的支持。</span>
                     </p>
                 </div>
             </div>
@@ -151,14 +153,14 @@
             <div class="md:col-span-2 space-y-6">
                 <!-- Contact for legal enquiries -->
                 <div class="bg-surface-container-low rounded-[2rem] p-8 editorial-shadow">
-                    <h3 class="text-xl font-headline font-bold text-on-surface mb-6">Legal Enquiries</h3>
+                    <h3 class="text-xl font-headline font-bold text-on-surface mb-6"><span class="lang-en">Legal Enquiries</span><span class="lang-zh">法律咨询</span></h3>
                     <div class="space-y-4">
                         <div class="flex items-start gap-3">
                             <div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
                                 <span class="material-symbols-outlined text-on-primary-container text-xl">mail</span>
                             </div>
                             <div>
-                                <p class="text-sm text-on-surface-variant mb-1">Email</p>
+                                <p class="text-sm text-on-surface-variant mb-1"><span class="lang-en">Email</span><span class="lang-zh">电子邮件</span></p>
                                 <a href="mailto:guanyincitta.nz@gmail.com" class="font-medium text-primary hover:underline cursor-pointer">guanyincitta.nz@gmail.com</a>
                             </div>
                         </div>
@@ -167,7 +169,7 @@
                                 <span class="material-symbols-outlined text-on-primary-container text-xl">phone</span>
                             </div>
                             <div>
-                                <p class="text-sm text-on-surface-variant mb-1">Phone</p>
+                                <p class="text-sm text-on-surface-variant mb-1"><span class="lang-en">Phone</span><span class="lang-zh">电话</span></p>
                                 <p class="font-medium text-on-surface">+64 9 525 0659</p>
                             </div>
                         </div>
@@ -176,7 +178,7 @@
                                 <span class="material-symbols-outlined text-on-primary-container text-xl">location_on</span>
                             </div>
                             <div>
-                                <p class="text-sm text-on-surface-variant mb-1">Address</p>
+                                <p class="text-sm text-on-surface-variant mb-1"><span class="lang-en">Address</span><span class="lang-zh">地址</span></p>
                                 <p class="font-medium text-on-surface">Unit C, 259 Great South Road,<br/>Greenlane, Auckland 1051</p>
                             </div>
                         </div>
@@ -188,9 +190,9 @@
                     <div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center mb-4">
                         <span class="material-symbols-outlined text-on-primary-container">balance</span>
                     </div>
-                    <h3 class="font-headline font-bold text-on-surface mb-3">Our Commitment</h3>
+                    <h3 class="font-headline font-bold text-on-surface mb-3"><span class="lang-en">Our Commitment</span><span class="lang-zh">我们的承诺</span></h3>
                     <p class="text-on-surface-variant text-sm leading-relaxed">
-                        As a registered charitable trust, we uphold the highest standards of governance and financial accountability. We are dedicated to the well-being of our community and all sentient beings.
+                        <span class="lang-en">As a registered charitable trust, we uphold the highest standards of governance and financial accountability. We are dedicated to the well-being of our community and all sentient beings.</span><span class="lang-zh">作为注册慈善信托，我们坚守最高标准的治理与财务问责原则，致力于服务我们的社区及一切有情众生的福祉。</span>
                     </p>
                 </div>
 
@@ -207,8 +209,8 @@
 <footer class="bg-[#f6f3f2] font-body text-sm leading-relaxed mt-24">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-16 max-w-screen-2xl mx-auto">
         <div class="space-y-6">
-            <div class="text-lg font-bold text-[#6e5e00] font-headline">Guanyin Citta Dharma Door (NZ) Charitable Trust</div>
-            <p class="text-stone-500 max-w-xs">Dedicated to spreading the wisdom of Buddhism and the compassionate spirit of Guan Yin Bodhisattva for the benefit of all sentient beings.</p>
+            <div class="text-lg font-bold text-[#6e5e00] font-headline"><span class="lang-en">Guanyin Citta Dharma Door (NZ) Charitable Trust</span><span class="lang-zh">观音堂法门（新西兰）慈善信托</span></div>
+            <p class="text-stone-500 max-w-xs"><span class="lang-en">Dedicated to spreading the wisdom of Buddhism and the compassionate spirit of Guan Yin Bodhisattva for the benefit of all sentient beings.</span><span class="lang-zh">致力于弘扬佛教智慧与观世音菩萨慈悲精神，利益一切有情众生。</span></p>
             <div class="flex gap-4">
                 <a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#6e5e00] shadow-sm hover:scale-110 transition-transform cursor-pointer" href="https://www.facebook.com/guanyincitta.nz/" target="_blank" aria-label="Facebook">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -223,17 +225,17 @@
         </div>
         <div class="grid grid-cols-2 gap-8">
             <div>
-                <h4 class="font-bold text-[#6e5e00] mb-6">Explore</h4>
+                <h4 class="font-bold text-[#6e5e00] mb-6"><span class="lang-en">Explore</span><span class="lang-zh">导航</span></h4>
                 <ul class="space-y-4">
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="index.html">Home</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="about.html">About Us</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="events.html">Events</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="contact.html">Contact</a></li>
-                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="donate.html">Donate</a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="about.html"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="events.html"><span class="lang-en">Events</span><span class="lang-zh">活动</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a></li>
+                    <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="donate.html"><span class="lang-en">Donate</span><span class="lang-zh">捐款</span></a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-[#6e5e00] mb-6">Contact</h4>
+                <h4 class="font-bold text-[#6e5e00] mb-6"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></h4>
                 <ul class="space-y-4">
                     <li class="text-stone-500">+64 9 525 0659</li>
                     <li class="text-stone-500">Unit C, 259 Great South Road, Greenlane, Auckland 1051</li>
@@ -242,16 +244,17 @@
             </div>
         </div>
         <div class="bg-white/50 p-8 rounded-3xl">
-            <h4 class="font-bold text-[#6e5e00] mb-4">Legal</h4>
+            <h4 class="font-bold text-[#6e5e00] mb-4"><span class="lang-en">Legal</span><span class="lang-zh">法律</span></h4>
             <ul class="space-y-3">
-                <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="legal.html">Legal Status</a></li>
+                <li><a class="text-stone-500 hover:underline decoration-[#f0d13c] decoration-2 underline-offset-4 cursor-pointer" href="legal.html"><span class="lang-en">Legal Status</span><span class="lang-zh">法律状态</span></a></li>
             </ul>
         </div>
     </div>
     <div class="border-t border-stone-200 py-8 text-center text-stone-400">
-        <p>Copyright &copy; 2025 by Guanyincitta.org.nz. All rights reserved.</p>
+        <p><span class="lang-en">Copyright &copy; 2025 by Guanyincitta.org.nz. All rights reserved.</span><span class="lang-zh">版权所有 &copy; 2025 Guanyincitta.org.nz。保留所有权利。</span></p>
     </div>
 </footer>
 
+<script src="js/lang.js"></script>
 </body>
 </html>
